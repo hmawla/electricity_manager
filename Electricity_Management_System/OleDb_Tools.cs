@@ -61,6 +61,13 @@ namespace Electricity_Management_System
             return dt;
         }
 
+        public static void FillDGV(DataGridView theDGV, String theQuery)
+        {
+            theDataTable.Reset();
+            theDataTable = ReadQueryOut(theQuery).Copy();
+            theDGV.DataSource = theDataTable;
+        }
+
         public static void FillData(DataGridView theDGV)
         {
             theDataTable.Reset();
