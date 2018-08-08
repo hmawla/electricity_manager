@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Electricity_Management_System
 {
-    public partial class Form1 : Form
+    public partial class Frm_Main : MaterialSkin.Controls.MaterialForm
     {
-        public Form1()
+        public Frm_Main()
         {
             InitializeComponent();
         }
