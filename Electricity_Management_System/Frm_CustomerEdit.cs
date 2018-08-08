@@ -25,14 +25,16 @@ namespace Electricity_Management_System
 
         public Frm_CustomerEdit()
         {
+            InitializeComponent();
             CUSTOMER_ID = GenID("customer","customer_id");
             Lbl_Customer_ID.Text = "Customer ID: " + CUSTOMER_ID;
             Editing = false;
-            InitializeComponent();
+            
         }
 
         public Frm_CustomerEdit(int CUSTOMER_ID)
         {
+            InitializeComponent();
             Editing = true;
             this.CUSTOMER_ID = CUSTOMER_ID;
             Lbl_Customer_ID.Text = "Customer ID: " + CUSTOMER_ID;
@@ -52,7 +54,7 @@ namespace Electricity_Management_System
 
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
 
-            InitializeComponent();
+            
         }
 
         void Btn_Submit_Click(object sender, EventArgs e)

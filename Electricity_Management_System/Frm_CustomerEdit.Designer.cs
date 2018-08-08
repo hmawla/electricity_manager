@@ -199,6 +199,7 @@
             // 
             // Cbox_Counter
             // 
+            this.Cbox_Counter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cbox_Counter.Font = new System.Drawing.Font("Roboto", 11F);
             this.Cbox_Counter.FormattingEnabled = true;
             this.Cbox_Counter.Location = new System.Drawing.Point(102, 107);

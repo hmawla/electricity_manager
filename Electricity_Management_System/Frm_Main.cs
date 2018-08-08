@@ -45,7 +45,9 @@ namespace Electricity_Management_System
 
         void Btn_AddNewCustomer_Click(object sender, EventArgs e)
         {
-
+            Frm_CustomerEdit frm = new Frm_CustomerEdit();
+            frm.ShowDialog();
+            frm.Dispose();
         }
     }
 }
