@@ -24,6 +24,8 @@ namespace Electricity_Management_System
         private int REGION_ID;
         private DataTable dt;
         private Boolean Editing;
+        private Boolean EditingRegion = false;
+        private Boolean EditingStreet = false;
 
         public Frm_CustomerEdit()
         {
@@ -36,7 +38,9 @@ namespace Electricity_Management_System
             FillCBox(CBox_Street, "SELECT street_id, street_name FROM street WHERE region_id = " + CBox_Region.SelectedValue, "street_id", "street_name");
             FillCBox(CBox_Building, "SELECT building_id, building_name FROM building WHERE street_id = " + CBox_Street.SelectedValue, "building_id", "building_name");
             CBox_Region.SelectedIndexChanged += new EventHandler(CBox_regions_SelectedIndexChanged);
+            CBox_Region.TextChanged += new EventHandler(CBox_Region_TextChanged);
             CBox_Street.SelectedIndexChanged += new EventHandler(CBox_streets_SelectedIndexChanged);
+            CBox_Street.TextChanged += new EventHandler(CBox_Street_TextChanged);
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
 
         }
@@ -63,14 +67,19 @@ namespace Electricity_Management_System
             Cbox_Counter.SelectedValue = COUNTER_ID;
             CBox_Building.SelectedValue = BUILDING_ID;
 
+            FillCBox(Cbox_Counter, "SELECT [counter_id] FROM [counter]", "counter_id", "counter_id");
             FillCBox(CBox_Region, "SELECT region_id, region_name FROM region", "region_id", "region_name");
-            FillCBox(CBox_Street, "SELECT street_id, street_name FROM street WHERE region_id = " + CBox_Region.SelectedValue, "street_id", "street_name");
-            FillCBox(CBox_Building, "SELECT building_id, building_name FROM building WHERE street_id = " + CBox_Street.SelectedValue, "building_id", "building_name");
-            CBox_Region.SelectedIndexChanged += new EventHandler(CBox_regions_SelectedIndexChanged);
-            CBox_Street.SelectedIndexChanged += new EventHandler(CBox_streets_SelectedIndexChanged);
             CBox_Region.SelectedValue = REGION_ID;
+            FillCBox(CBox_Street, "SELECT street_id, street_name FROM street WHERE region_id = " + CBox_Region.SelectedValue, "street_id", "street_name");
             CBox_Street.SelectedValue = STREET_ID;
+            FillCBox(CBox_Building, "SELECT building_id, building_name FROM building WHERE street_id = " + CBox_Street.SelectedValue, "building_id", "building_name");
             CBox_Building.SelectedValue = BUILDING_ID;
+            CBox_Region.SelectedIndexChanged += new EventHandler(CBox_regions_SelectedIndexChanged);
+            CBox_Region.TextChanged += new EventHandler(CBox_Region_TextChanged);
+            CBox_Street.SelectedIndexChanged += new EventHandler(CBox_streets_SelectedIndexChanged);
+            CBox_Street.TextChanged += new EventHandler(CBox_Street_TextChanged);
+
+
 
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
 
@@ -80,11 +89,6 @@ namespace Electricity_Management_System
         {
             if (Txt_Customer_Name.Text.Length > 0 && Txt_Customer_Phone.Text.Length > 0 && Txt_Customer_Floor.Value >=0 && CBox_Building.Text.Length > 0 && CBox_Street.Text.Length > 0 && CBox_Region.Text.Length > 0 && Cbox_Counter.Text.Length > 0)
             {
-                //DATA CAN BE ACCEPTED
-                //WILL NEED Building/Street/Region generator
-                //Will need textboxes validation rules
-                //Now it is time for rest :P
-
 
                 if (!Editing)
                 {
@@ -104,7 +108,18 @@ namespace Electricity_Management_System
                 }
                 else
                 {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to edit customer #" + CUSTOMER_ID, "Editing a Customer!", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        CUSTOMER_NAME = Txt_Customer_Name.Text;
+                        CUSTOMER_PHONE = Txt_Customer_Phone.Text;
+                        FLOOR = int.Parse(Txt_Customer_Floor.Text);
+                        COUNTER_ID = int.Parse(Cbox_Counter.SelectedValue.ToString());
+                        BUILDING_ID = AddBuilding(CBox_Region, CBox_Street, CBox_Building);
 
+                        ExecuteQuery("UPDATE customer SET customer_name = '" + CUSTOMER_NAME + "', customer_phone = '" + CUSTOMER_PHONE + "', floor = " + FLOOR + ", counter_id = " + COUNTER_ID + ", building_id = " + BUILDING_ID + " WHERE customer_id = " + CUSTOMER_ID);
+                        this.Dispose();
+                    }
                 }
             }
             else
@@ -115,12 +130,43 @@ namespace Electricity_Management_System
 
         private void CBox_regions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FillCBox(CBox_Street, "SELECT street_id, street_name FROM street WHERE region_id = " + CBox_Region.SelectedValue, "street_id", "street_name");
+            if (!EditingRegion)
+            {
+                FillCBox(CBox_Street, "SELECT street_id, street_name FROM street WHERE region_id = " + CBox_Region.SelectedValue, "street_id", "street_name");
+            }
+        }
+
+        private void CBox_Region_TextChanged(object sender, EventArgs e)
+        {
+            if (CBox_Region.SelectedValue == null)
+            {
+                EditingRegion = true;
+                CBox_Street.DataSource = null;
+                CBox_Street.Text = "";
+
+                CBox_Building.DataSource = null;
+                CBox_Building.Text = "";
+                EditingRegion = false;
+            }
         }
 
         private void CBox_streets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FillCBox(CBox_Building, "SELECT building_id, building_name FROM building WHERE street_id = " + CBox_Street.SelectedValue, "building_id", "building_name");
+            if (!EditingRegion)
+            {
+                FillCBox(CBox_Building, "SELECT building_id, building_name FROM building WHERE street_id = " + CBox_Street.SelectedValue, "building_id", "building_name");
+            }
+        }
+
+        private void CBox_Street_TextChanged(object sender, EventArgs e)
+        {
+            if (CBox_Street.SelectedValue == null)
+            {
+                EditingStreet = true;
+                CBox_Building.DataSource = null;
+                CBox_Building.Text = "";
+                EditingStreet = false;
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Electricity_Management_System
             this.Load += new EventHandler(Main_OnLoad);
             Tab_Navigator.SelectedIndexChanged += new EventHandler(Tab_Navigator_SelectedIndexChanged);
             Btn_AddNewCustomer.Click += new EventHandler(Btn_AddNewCustomer_Click);
+            Btn_ModCustomer.Click += new EventHandler(Btn_ModCustomer_Click);
 
             
 
@@ -48,6 +49,21 @@ namespace Electricity_Management_System
             Frm_CustomerEdit frm = new Frm_CustomerEdit();
             frm.ShowDialog();
             FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
+        }
+
+        void Btn_ModCustomer_Click(object sender, EventArgs e)
+        {
+            if (DGV_Customers.SelectedRows.Count > 0)
+            {
+                Frm_CustomerEdit frm = new Frm_CustomerEdit(int.Parse(DGV_Customers.SelectedRows[0].Cells[0].Value.ToString()));
+                frm.ShowDialog();
+                FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
+            }
+            else
+            {
+                MessageBox.Show("Please select a customer!");
+            }
+            
         }
     }
 }
