@@ -32,7 +32,7 @@ namespace Electricity_Management_System
 
         void Main_OnLoad(object sender, EventArgs e)
         {
-
+            OpenConnection();
         }
 
         void Tab_Navigator_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Electricity_Management_System
         {
             Frm_CustomerEdit frm = new Frm_CustomerEdit();
             frm.ShowDialog();
-            frm.Dispose();
+            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
         }
     }
 }
