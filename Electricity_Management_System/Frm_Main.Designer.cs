@@ -30,9 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.Tab_Navigator = new MaterialSkin.Controls.MaterialTabControl();
             this.Tab_Info = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,7 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lable1 = new System.Windows.Forms.Label();
             this.Tab_Customers = new System.Windows.Forms.TabPage();
-            this.Btn_Reset = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btn_ResetCustomers = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.Txt_FindCustomerByName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Btn_DeleteCustomer = new MaterialSkin.Controls.MaterialFlatButton();
@@ -58,12 +62,19 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.Txt_CounterFilterByCost = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Btn_DeleteCounter = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btn_ModCounter = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btn_AddNewCounter = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.DGV_Counters = new System.Windows.Forms.DataGridView();
             this.Tab_Navigator.SuspendLayout();
             this.Tab_Info.SuspendLayout();
             this.Tab_Customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Customers)).BeginInit();
+            this.Tab_Counters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Counters)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -119,6 +130,26 @@
             this.Tab_Info.TabIndex = 0;
             this.Tab_Info.Text = "INFO";
             this.Tab_Info.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(8, 109);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(348, 38);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "<Monthly_Income> L.L.";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Roboto", 18F);
+            this.label11.Location = new System.Drawing.Point(8, 80);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(335, 29);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Approximate Monthly Income:";
             // 
             // label8
             // 
@@ -231,7 +262,7 @@
             // Tab_Customers
             // 
             this.Tab_Customers.BackColor = System.Drawing.Color.White;
-            this.Tab_Customers.Controls.Add(this.Btn_Reset);
+            this.Tab_Customers.Controls.Add(this.Btn_ResetCustomers);
             this.Tab_Customers.Controls.Add(this.materialLabel1);
             this.Tab_Customers.Controls.Add(this.Txt_FindCustomerByName);
             this.Tab_Customers.Controls.Add(this.Btn_DeleteCustomer);
@@ -245,21 +276,21 @@
             this.Tab_Customers.TabIndex = 1;
             this.Tab_Customers.Text = "CUSTOMERS";
             // 
-            // Btn_Reset
+            // Btn_ResetCustomers
             // 
-            this.Btn_Reset.AutoSize = true;
-            this.Btn_Reset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Btn_Reset.Depth = 0;
-            this.Btn_Reset.Icon = null;
-            this.Btn_Reset.Location = new System.Drawing.Point(233, 82);
-            this.Btn_Reset.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Btn_Reset.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Btn_Reset.Name = "Btn_Reset";
-            this.Btn_Reset.Primary = true;
-            this.Btn_Reset.Size = new System.Drawing.Size(30, 36);
-            this.Btn_Reset.TabIndex = 6;
-            this.Btn_Reset.Text = "X";
-            this.Btn_Reset.UseVisualStyleBackColor = true;
+            this.Btn_ResetCustomers.AutoSize = true;
+            this.Btn_ResetCustomers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_ResetCustomers.Depth = 0;
+            this.Btn_ResetCustomers.Icon = null;
+            this.Btn_ResetCustomers.Location = new System.Drawing.Point(233, 82);
+            this.Btn_ResetCustomers.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_ResetCustomers.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_ResetCustomers.Name = "Btn_ResetCustomers";
+            this.Btn_ResetCustomers.Primary = true;
+            this.Btn_ResetCustomers.Size = new System.Drawing.Size(30, 36);
+            this.Btn_ResetCustomers.TabIndex = 6;
+            this.Btn_ResetCustomers.Text = "X";
+            this.Btn_ResetCustomers.UseVisualStyleBackColor = true;
             // 
             // materialLabel1
             // 
@@ -381,18 +412,25 @@
             // 
             // Tab_Counters
             // 
+            this.Tab_Counters.BackColor = System.Drawing.Color.White;
+            this.Tab_Counters.Controls.Add(this.materialFlatButton2);
+            this.Tab_Counters.Controls.Add(this.materialLabel2);
+            this.Tab_Counters.Controls.Add(this.Txt_CounterFilterByCost);
+            this.Tab_Counters.Controls.Add(this.Btn_DeleteCounter);
+            this.Tab_Counters.Controls.Add(this.Btn_ModCounter);
+            this.Tab_Counters.Controls.Add(this.Btn_AddNewCounter);
+            this.Tab_Counters.Controls.Add(this.DGV_Counters);
             this.Tab_Counters.Location = new System.Drawing.Point(4, 22);
             this.Tab_Counters.Name = "Tab_Counters";
-            this.Tab_Counters.Size = new System.Drawing.Size(718, 369);
+            this.Tab_Counters.Size = new System.Drawing.Size(800, 379);
             this.Tab_Counters.TabIndex = 2;
             this.Tab_Counters.Text = "COUNTERS";
-            this.Tab_Counters.UseVisualStyleBackColor = true;
             // 
             // Tab_Boxes
             // 
             this.Tab_Boxes.Location = new System.Drawing.Point(4, 22);
             this.Tab_Boxes.Name = "Tab_Boxes";
-            this.Tab_Boxes.Size = new System.Drawing.Size(718, 369);
+            this.Tab_Boxes.Size = new System.Drawing.Size(800, 379);
             this.Tab_Boxes.TabIndex = 4;
             this.Tab_Boxes.Text = "BOXES";
             this.Tab_Boxes.UseVisualStyleBackColor = true;
@@ -401,7 +439,7 @@
             // 
             this.Tab_Invoices.Location = new System.Drawing.Point(4, 22);
             this.Tab_Invoices.Name = "Tab_Invoices";
-            this.Tab_Invoices.Size = new System.Drawing.Size(718, 369);
+            this.Tab_Invoices.Size = new System.Drawing.Size(800, 379);
             this.Tab_Invoices.TabIndex = 3;
             this.Tab_Invoices.Text = "INVOICES";
             this.Tab_Invoices.UseVisualStyleBackColor = true;
@@ -410,7 +448,7 @@
             // 
             this.Tab_General.Location = new System.Drawing.Point(4, 22);
             this.Tab_General.Name = "Tab_General";
-            this.Tab_General.Size = new System.Drawing.Size(718, 369);
+            this.Tab_General.Size = new System.Drawing.Size(800, 379);
             this.Tab_General.TabIndex = 5;
             this.Tab_General.Text = "GENERAL";
             this.Tab_General.UseVisualStyleBackColor = true;
@@ -461,25 +499,139 @@
             this.materialFlatButton1.Text = "About";
             this.materialFlatButton1.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // materialFlatButton2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 109);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(348, 38);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "<Monthly_Income> L.L.";
+            this.materialFlatButton2.AutoSize = true;
+            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton2.Depth = 0;
+            this.materialFlatButton2.Icon = null;
+            this.materialFlatButton2.Location = new System.Drawing.Point(233, 80);
+            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton2.Name = "materialFlatButton2";
+            this.materialFlatButton2.Primary = true;
+            this.materialFlatButton2.Size = new System.Drawing.Size(30, 36);
+            this.materialFlatButton2.TabIndex = 13;
+            this.materialFlatButton2.Text = "X";
+            this.materialFlatButton2.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // materialLabel2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto", 18F);
-            this.label11.Location = new System.Drawing.Point(8, 80);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(335, 29);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Approximate Monthly Income:";
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(7, 75);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(103, 19);
+            this.materialLabel2.TabIndex = 12;
+            this.materialLabel2.Text = "Filter By Cost:";
+            // 
+            // Txt_CounterFilterByCost
+            // 
+            this.Txt_CounterFilterByCost.Depth = 0;
+            this.Txt_CounterFilterByCost.Hint = "";
+            this.Txt_CounterFilterByCost.Location = new System.Drawing.Point(7, 94);
+            this.Txt_CounterFilterByCost.MaxLength = 32767;
+            this.Txt_CounterFilterByCost.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Txt_CounterFilterByCost.Name = "Txt_CounterFilterByCost";
+            this.Txt_CounterFilterByCost.PasswordChar = '\0';
+            this.Txt_CounterFilterByCost.SelectedText = "";
+            this.Txt_CounterFilterByCost.SelectionLength = 0;
+            this.Txt_CounterFilterByCost.SelectionStart = 0;
+            this.Txt_CounterFilterByCost.Size = new System.Drawing.Size(219, 23);
+            this.Txt_CounterFilterByCost.TabIndex = 11;
+            this.Txt_CounterFilterByCost.TabStop = false;
+            this.Txt_CounterFilterByCost.UseSystemPasswordChar = false;
+            // 
+            // Btn_DeleteCounter
+            // 
+            this.Btn_DeleteCounter.AutoSize = true;
+            this.Btn_DeleteCounter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_DeleteCounter.Depth = 0;
+            this.Btn_DeleteCounter.Icon = null;
+            this.Btn_DeleteCounter.Location = new System.Drawing.Point(304, 7);
+            this.Btn_DeleteCounter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_DeleteCounter.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_DeleteCounter.Name = "Btn_DeleteCounter";
+            this.Btn_DeleteCounter.Primary = false;
+            this.Btn_DeleteCounter.Size = new System.Drawing.Size(134, 36);
+            this.Btn_DeleteCounter.TabIndex = 10;
+            this.Btn_DeleteCounter.Text = "Delete Counter";
+            this.Btn_DeleteCounter.UseVisualStyleBackColor = true;
+            // 
+            // Btn_ModCounter
+            // 
+            this.Btn_ModCounter.AutoSize = true;
+            this.Btn_ModCounter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_ModCounter.Depth = 0;
+            this.Btn_ModCounter.Icon = null;
+            this.Btn_ModCounter.Location = new System.Drawing.Point(160, 7);
+            this.Btn_ModCounter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_ModCounter.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_ModCounter.Name = "Btn_ModCounter";
+            this.Btn_ModCounter.Primary = true;
+            this.Btn_ModCounter.Size = new System.Drawing.Size(136, 36);
+            this.Btn_ModCounter.TabIndex = 9;
+            this.Btn_ModCounter.Text = "Modify Counter";
+            this.Btn_ModCounter.UseVisualStyleBackColor = true;
+            // 
+            // Btn_AddNewCounter
+            // 
+            this.Btn_AddNewCounter.AutoSize = true;
+            this.Btn_AddNewCounter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_AddNewCounter.Depth = 0;
+            this.Btn_AddNewCounter.Icon = null;
+            this.Btn_AddNewCounter.Location = new System.Drawing.Point(7, 7);
+            this.Btn_AddNewCounter.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_AddNewCounter.Name = "Btn_AddNewCounter";
+            this.Btn_AddNewCounter.Primary = true;
+            this.Btn_AddNewCounter.Size = new System.Drawing.Size(146, 36);
+            this.Btn_AddNewCounter.TabIndex = 8;
+            this.Btn_AddNewCounter.Text = "Add New Counter";
+            this.Btn_AddNewCounter.UseVisualStyleBackColor = true;
+            // 
+            // DGV_Counters
+            // 
+            this.DGV_Counters.AllowUserToAddRows = false;
+            this.DGV_Counters.AllowUserToDeleteRows = false;
+            this.DGV_Counters.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV_Counters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Counters.BackgroundColor = System.Drawing.Color.White;
+            this.DGV_Counters.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGV_Counters.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGV_Counters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Counters.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Counters.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DGV_Counters.GridColor = System.Drawing.Color.Black;
+            this.DGV_Counters.Location = new System.Drawing.Point(6, 123);
+            this.DGV_Counters.MultiSelect = false;
+            this.DGV_Counters.Name = "DGV_Counters";
+            this.DGV_Counters.ReadOnly = true;
+            this.DGV_Counters.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Counters.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DGV_Counters.RowHeadersVisible = false;
+            this.DGV_Counters.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DGV_Counters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Counters.Size = new System.Drawing.Size(788, 248);
+            this.DGV_Counters.TabIndex = 7;
             // 
             // Frm_Main
             // 
@@ -493,6 +645,7 @@
             this.Controls.Add(this.Tab_Navigator);
             this.Controls.Add(this.materialTabSelector1);
             this.Name = "Frm_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
             this.Tab_Navigator.ResumeLayout(false);
             this.Tab_Info.ResumeLayout(false);
@@ -500,6 +653,9 @@
             this.Tab_Customers.ResumeLayout(false);
             this.Tab_Customers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Customers)).EndInit();
+            this.Tab_Counters.ResumeLayout(false);
+            this.Tab_Counters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Counters)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,7 +678,7 @@
         private MaterialSkin.Controls.MaterialFlatButton Btn_ModCustomer;
         private MaterialSkin.Controls.MaterialRaisedButton Btn_AddNewCustomer;
         private System.Windows.Forms.DataGridView DGV_Customers;
-        private MaterialSkin.Controls.MaterialFlatButton Btn_Reset;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_ResetCustomers;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField Txt_FindCustomerByName;
         private System.Windows.Forms.Label label8;
@@ -537,6 +693,13 @@
         private System.Windows.Forms.Label lable1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Txt_CounterFilterByCost;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_DeleteCounter;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_ModCounter;
+        private MaterialSkin.Controls.MaterialRaisedButton Btn_AddNewCounter;
+        private System.Windows.Forms.DataGridView DGV_Counters;
     }
 }
 

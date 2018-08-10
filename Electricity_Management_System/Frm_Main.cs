@@ -22,7 +22,10 @@ namespace Electricity_Management_System
             Tab_Navigator.SelectedIndexChanged += new EventHandler(Tab_Navigator_SelectedIndexChanged);
             Btn_AddNewCustomer.Click += new EventHandler(Btn_AddNewCustomer_Click);
             Btn_ModCustomer.Click += new EventHandler(Btn_ModCustomer_Click);
-
+            DGV_Customers.Click += new EventHandler(DGV_Customers_SelectionChanged);
+            Txt_FindCustomerByName.TextChanged += new EventHandler(Txt_FindCustomerByName_TextChanged);
+            Btn_ResetCustomers.Click += new EventHandler(Btn_ResetCustomers_Click);
+            Btn_AddNewCounter.Click += new EventHandler(Btn_AddNewCounter_Click);
             
 
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -40,7 +43,11 @@ namespace Electricity_Management_System
         {
             if (Tab_Navigator.SelectedIndex == 1)
             {
-                FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
+                UpdateCustomers();
+            }
+            else if (Tab_Navigator.SelectedIndex == 2)
+            {
+                UpdateCounters();
             }
         }
 
@@ -48,7 +55,29 @@ namespace Electricity_Management_System
         {
             Frm_CustomerEdit frm = new Frm_CustomerEdit();
             frm.ShowDialog();
+            UpdateCustomers();
+        }
+
+        void UpdateCustomers()
+        {
+            Txt_FindCustomerByName.Text = "";
             FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
+        }
+        
+
+        void UpdateCustomers(String CUSTOMER_NAME)
+        {
+            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id AND customer_name LIKE '%" + CUSTOMER_NAME + "%'");
+        }
+
+        void UpdateCounters()
+        {
+            FillDGV(DGV_Counters, "SELECT counter_id AS [ID], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter]");
+        }
+
+        void UpdateCounters(String MONTHLY_COST)
+        {
+            FillDGV(DGV_Counters, "SELECT counter_id AS [ID], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter] WHERE monthly_cost LIKE '" + MONTHLY_COST + "%'");
         }
 
         void Btn_ModCustomer_Click(object sender, EventArgs e)
@@ -57,13 +86,48 @@ namespace Electricity_Management_System
             {
                 Frm_CustomerEdit frm = new Frm_CustomerEdit(int.Parse(DGV_Customers.SelectedRows[0].Cells[0].Value.ToString()));
                 frm.ShowDialog();
-                FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
+                UpdateCustomers();
             }
             else
             {
                 MessageBox.Show("Please select a customer!");
             }
             
+        }
+
+        void DGV_Customers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DGV_Customers.SelectedRows.Count > 0)
+            {
+                Frm_CustomerDetails frm = new Frm_CustomerDetails(int.Parse(DGV_Customers.SelectedRows[0].Cells[0].Value.ToString()));
+                frm.ShowDialog();
+                frm.Dispose();
+                UpdateCustomers();
+
+            }
+        }
+        void Txt_FindCustomerByName_TextChanged(object sender, EventArgs e)
+        {
+            if (Txt_FindCustomerByName.Text.Length > 0)
+            {
+                UpdateCustomers(Txt_FindCustomerByName.Text);
+            }
+            else
+            {
+                UpdateCustomers();
+            }
+        }
+        void Btn_ResetCustomers_Click(object sender, EventArgs e)
+        {
+            Txt_FindCustomerByName.Text = "";
+        }
+
+        void Btn_AddNewCounter_Click(object sender, EventArgs args)
+        {
+            Frm_CounterEdit frm = new Frm_CounterEdit();
+            frm.ShowDialog();
+            frm.Dispose();
+            UpdateCounters();
         }
     }
 }
