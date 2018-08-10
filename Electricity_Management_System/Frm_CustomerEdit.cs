@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,11 @@ namespace Electricity_Management_System
         public Frm_CustomerEdit()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
+
             CUSTOMER_ID = GenID("customer","customer_id");
             Lbl_Customer_ID.Text = "Customer ID: " + CUSTOMER_ID;
             Editing = false;
@@ -48,6 +54,10 @@ namespace Electricity_Management_System
         public Frm_CustomerEdit(int CUSTOMER_ID)
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
             Editing = true;
             this.CUSTOMER_ID = CUSTOMER_ID;
             Lbl_Customer_ID.Text = "Customer ID: " + CUSTOMER_ID;
