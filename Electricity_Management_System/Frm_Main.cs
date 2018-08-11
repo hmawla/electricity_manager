@@ -19,15 +19,31 @@ namespace Electricity_Management_System
             InitializeComponent();
 
             this.Load += new EventHandler(Main_OnLoad);
-            Tab_Navigator.SelectedIndexChanged += new EventHandler(Tab_Navigator_SelectedIndexChanged);
-            Btn_AddNewCustomer.Click += new EventHandler(Btn_AddNewCustomer_Click);
-            Btn_ModCustomer.Click += new EventHandler(Btn_ModCustomer_Click);
-            DGV_Customers.Click += new EventHandler(DGV_Customers_SelectionChanged);
-            Txt_FindCustomerByName.TextChanged += new EventHandler(Txt_FindCustomerByName_TextChanged);
-            Btn_ResetCustomers.Click += new EventHandler(Btn_ResetCustomers_Click);
-            Btn_AddNewCounter.Click += new EventHandler(Btn_AddNewCounter_Click);
-            
 
+            //Tab Navigation
+            Tab_Navigator.SelectedIndexChanged += new EventHandler(Tab_Navigator_SelectedIndexChanged);
+            
+            //DataGridViews
+            DGV_Customers.Click += new EventHandler(DGV_Customers_Click);
+            DGV_Counters.Click += new EventHandler(DGV_Counters_Click);
+
+            //Filter Text Boxes
+            Txt_FindCustomerByName.TextChanged += new EventHandler(Txt_FindCustomerByName_TextChanged);
+            Txt_CounterFilterByCost.TextChanged += new EventHandler(Txt_CounterFilterByCost_TextChanged);
+
+            //Addition Buttons
+            Btn_AddNewCustomer.Click += new EventHandler(Btn_AddNewCustomer_Click);
+            Btn_AddNewCounter.Click += new EventHandler(Btn_AddNewCounter_Click);
+
+            //Modification Buttons
+            Btn_ModCustomer.Click += new EventHandler(Btn_ModCustomer_Click);
+            Btn_ModCounter.Click += new EventHandler(Btn_ModCounter_Click);
+
+            //Reset Buttons
+            Btn_ResetCustomers.Click += new EventHandler(Btn_ResetCustomers_Click);
+            materialFlatButton2.Click += new EventHandler(Btn_ResetCounters_Click);
+
+            //Theme Manager
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -72,6 +88,7 @@ namespace Electricity_Management_System
 
         void UpdateCounters()
         {
+            Txt_CounterFilterByCost.Text = "";
             FillDGV(DGV_Counters, "SELECT counter_id AS [ID], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter]");
         }
 
@@ -95,7 +112,7 @@ namespace Electricity_Management_System
             
         }
 
-        void DGV_Customers_SelectionChanged(object sender, EventArgs e)
+        void DGV_Customers_Click(object sender, EventArgs e)
         {
             if (DGV_Customers.SelectedRows.Count > 0)
             {
@@ -106,6 +123,18 @@ namespace Electricity_Management_System
 
             }
         }
+        void DGV_Counters_Click(object sender, EventArgs e)
+        {
+            if (DGV_Counters.SelectedRows.Count > 0)
+            {
+                Frm_CounterDetails frm = new Frm_CounterDetails(int.Parse(DGV_Counters.SelectedRows[0].Cells[0].Value.ToString()));
+                frm.ShowDialog();
+                frm.Dispose();
+                UpdateCounters();
+
+            }
+        }
+
         void Txt_FindCustomerByName_TextChanged(object sender, EventArgs e)
         {
             if (Txt_FindCustomerByName.Text.Length > 0)
@@ -117,9 +146,26 @@ namespace Electricity_Management_System
                 UpdateCustomers();
             }
         }
+        void Txt_CounterFilterByCost_TextChanged(object sender, EventArgs e)
+        {
+            if (Txt_CounterFilterByCost.Text.Length > 0)
+            {
+                UpdateCounters(Txt_CounterFilterByCost.Text);
+            }
+            else
+            {
+                UpdateCounters();
+            }
+        }
+
         void Btn_ResetCustomers_Click(object sender, EventArgs e)
         {
             Txt_FindCustomerByName.Text = "";
+        }
+
+        void Btn_ResetCounters_Click(object sender, EventArgs e)
+        {
+            Txt_CounterFilterByCost.Text = "";
         }
 
         void Btn_AddNewCounter_Click(object sender, EventArgs args)
@@ -128,6 +174,21 @@ namespace Electricity_Management_System
             frm.ShowDialog();
             frm.Dispose();
             UpdateCounters();
+        }
+
+        void Btn_ModCounter_Click(object sender, EventArgs args)
+        {
+            if(DGV_Counters.SelectedRows.Count > 0){
+                Frm_CounterEdit frm = new Frm_CounterEdit(int.Parse(DGV_Counters.SelectedRows[0].Cells[0].Value.ToString()));
+                frm.ShowDialog();
+                frm.Dispose();
+                UpdateCounters();
+            }
+            else
+            {
+                MessageBox.Show("Please select a counter!");
+            }
+
         }
     }
 }
