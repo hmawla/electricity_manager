@@ -198,5 +198,57 @@ namespace Electricity_Management_System
             End_Of_For:
             return theBuildingId;
         }
+        // A Tool to add a street from scratch region
+        public static int AddStreet(ComboBox cbox_regions, ComboBox cbox_streets)
+        {
+            // used in the loop
+            int i;
+            // Conserves Old values
+            string theStreet = cbox_streets.Text;
+            int theStreetId = 1;
+            // Conserves New Values
+            if (cbox_regions.SelectedValue != null)
+            {
+                if (cbox_streets.SelectedValue != null)
+                {
+                    theStreetId = int.Parse(cbox_streets.SelectedValue.ToString());
+                    goto End_Of_For;
+                }
+            }
+
+
+
+            // Enters a checking loop that runs 2 times, each time for Region, and Street respectively
+            // Each time it checks of the item exists then jump to the next else add the item and continue
+            // Until the last ittiration is reached
+            for (i = 1; i <= 2; i++)
+            {
+                if (Exists(cbox_regions.Text, "SELECT region_name FROM region"))
+                {
+                    if (Exists(cbox_streets.Text, "SELECT street_name FROM street WHERE street_id = " + cbox_streets.SelectedValue + " AND region_id = " + cbox_regions.SelectedValue))
+                    {
+                        goto End_Of_For;
+                    }
+                    else
+                    {
+                        string streetId = GenID("street", "street_id").ToString();
+                        ExecuteQuery("INSERT INTO street VALUES(" + streetId + ", '" + theStreet + "', " + cbox_regions.SelectedValue + ")");
+                        FillCBox(cbox_streets, "SELECT street_id, street_name FROM street WHERE region_id = " + cbox_regions.SelectedValue, "street_id", "street_name");
+                        cbox_streets.SelectedValue = streetId;
+                        theStreetId = int.Parse(streetId);
+                    }
+                }
+                else
+                {
+                    string regionId = GenID("region", "region_id").ToString();
+                    ExecuteQuery("INSERT INTO region VALUES(" + regionId + ", '" + cbox_regions.Text + "')");
+                    FillCBox(cbox_regions, "SELECT region_id, region_name FROM region", "region_id", "region_name");
+                    cbox_regions.SelectedValue = regionId;
+                }
+            }
+
+            End_Of_For:
+            return theStreetId;
+        }
     }
-    }
+}

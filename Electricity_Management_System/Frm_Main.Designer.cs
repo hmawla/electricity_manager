@@ -66,12 +66,12 @@
             this.Btn_AddNewCounter = new MaterialSkin.Controls.MaterialRaisedButton();
             this.DGV_Counters = new System.Windows.Forms.DataGridView();
             this.Tab_Boxes = new System.Windows.Forms.TabPage();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btn_ResetBoxes = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.Txt_SearchByBoxName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Btn_DeleteBox = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btn_ModBox = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btn_AddNewBox = new MaterialSkin.Controls.MaterialRaisedButton();
             this.DGV_Boxes = new System.Windows.Forms.DataGridView();
             this.Tab_Invoices = new System.Windows.Forms.TabPage();
             this.Tab_General = new System.Windows.Forms.TabPage();
@@ -574,12 +574,12 @@
             // Tab_Boxes
             // 
             this.Tab_Boxes.BackColor = System.Drawing.Color.White;
-            this.Tab_Boxes.Controls.Add(this.materialFlatButton2);
+            this.Tab_Boxes.Controls.Add(this.Btn_ResetBoxes);
             this.Tab_Boxes.Controls.Add(this.materialLabel3);
-            this.Tab_Boxes.Controls.Add(this.materialSingleLineTextField1);
-            this.Tab_Boxes.Controls.Add(this.materialFlatButton3);
-            this.Tab_Boxes.Controls.Add(this.materialFlatButton4);
-            this.Tab_Boxes.Controls.Add(this.materialRaisedButton2);
+            this.Tab_Boxes.Controls.Add(this.Txt_SearchByBoxName);
+            this.Tab_Boxes.Controls.Add(this.Btn_DeleteBox);
+            this.Tab_Boxes.Controls.Add(this.Btn_ModBox);
+            this.Tab_Boxes.Controls.Add(this.Btn_AddNewBox);
             this.Tab_Boxes.Controls.Add(this.DGV_Boxes);
             this.Tab_Boxes.Location = new System.Drawing.Point(4, 22);
             this.Tab_Boxes.Name = "Tab_Boxes";
@@ -587,21 +587,21 @@
             this.Tab_Boxes.TabIndex = 4;
             this.Tab_Boxes.Text = "BOXES";
             // 
-            // materialFlatButton2
+            // Btn_ResetBoxes
             // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(233, 80);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = true;
-            this.materialFlatButton2.Size = new System.Drawing.Size(30, 36);
-            this.materialFlatButton2.TabIndex = 20;
-            this.materialFlatButton2.Text = "X";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.Btn_ResetBoxes.AutoSize = true;
+            this.Btn_ResetBoxes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_ResetBoxes.Depth = 0;
+            this.Btn_ResetBoxes.Icon = null;
+            this.Btn_ResetBoxes.Location = new System.Drawing.Point(233, 80);
+            this.Btn_ResetBoxes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_ResetBoxes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_ResetBoxes.Name = "Btn_ResetBoxes";
+            this.Btn_ResetBoxes.Primary = true;
+            this.Btn_ResetBoxes.Size = new System.Drawing.Size(30, 36);
+            this.Btn_ResetBoxes.TabIndex = 20;
+            this.Btn_ResetBoxes.Text = "X";
+            this.Btn_ResetBoxes.UseVisualStyleBackColor = true;
             // 
             // materialLabel3
             // 
@@ -612,73 +612,73 @@
             this.materialLabel3.Location = new System.Drawing.Point(7, 75);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(103, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(152, 19);
             this.materialLabel3.TabIndex = 19;
-            this.materialLabel3.Text = "Filter By Cost:";
+            this.materialLabel3.Text = "Search By Box Name:";
             // 
-            // materialSingleLineTextField1
+            // Txt_SearchByBoxName
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(7, 94);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(219, 23);
-            this.materialSingleLineTextField1.TabIndex = 18;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.Txt_SearchByBoxName.Depth = 0;
+            this.Txt_SearchByBoxName.Hint = "";
+            this.Txt_SearchByBoxName.Location = new System.Drawing.Point(7, 94);
+            this.Txt_SearchByBoxName.MaxLength = 32767;
+            this.Txt_SearchByBoxName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Txt_SearchByBoxName.Name = "Txt_SearchByBoxName";
+            this.Txt_SearchByBoxName.PasswordChar = '\0';
+            this.Txt_SearchByBoxName.SelectedText = "";
+            this.Txt_SearchByBoxName.SelectionLength = 0;
+            this.Txt_SearchByBoxName.SelectionStart = 0;
+            this.Txt_SearchByBoxName.Size = new System.Drawing.Size(219, 23);
+            this.Txt_SearchByBoxName.TabIndex = 18;
+            this.Txt_SearchByBoxName.TabStop = false;
+            this.Txt_SearchByBoxName.UseSystemPasswordChar = false;
             // 
-            // materialFlatButton3
+            // Btn_DeleteBox
             // 
-            this.materialFlatButton3.AutoSize = true;
-            this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton3.Depth = 0;
-            this.materialFlatButton3.Icon = null;
-            this.materialFlatButton3.Location = new System.Drawing.Point(304, 7);
-            this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton3.Name = "materialFlatButton3";
-            this.materialFlatButton3.Primary = false;
-            this.materialFlatButton3.Size = new System.Drawing.Size(134, 36);
-            this.materialFlatButton3.TabIndex = 17;
-            this.materialFlatButton3.Text = "Delete Counter";
-            this.materialFlatButton3.UseVisualStyleBackColor = true;
+            this.Btn_DeleteBox.AutoSize = true;
+            this.Btn_DeleteBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_DeleteBox.Depth = 0;
+            this.Btn_DeleteBox.Icon = null;
+            this.Btn_DeleteBox.Location = new System.Drawing.Point(234, 7);
+            this.Btn_DeleteBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_DeleteBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_DeleteBox.Name = "Btn_DeleteBox";
+            this.Btn_DeleteBox.Primary = false;
+            this.Btn_DeleteBox.Size = new System.Drawing.Size(99, 36);
+            this.Btn_DeleteBox.TabIndex = 17;
+            this.Btn_DeleteBox.Text = "Delete Box";
+            this.Btn_DeleteBox.UseVisualStyleBackColor = true;
             // 
-            // materialFlatButton4
+            // Btn_ModBox
             // 
-            this.materialFlatButton4.AutoSize = true;
-            this.materialFlatButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton4.Depth = 0;
-            this.materialFlatButton4.Icon = null;
-            this.materialFlatButton4.Location = new System.Drawing.Point(160, 7);
-            this.materialFlatButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton4.Name = "materialFlatButton4";
-            this.materialFlatButton4.Primary = true;
-            this.materialFlatButton4.Size = new System.Drawing.Size(136, 36);
-            this.materialFlatButton4.TabIndex = 16;
-            this.materialFlatButton4.Text = "Modify Counter";
-            this.materialFlatButton4.UseVisualStyleBackColor = true;
+            this.Btn_ModBox.AutoSize = true;
+            this.Btn_ModBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_ModBox.Depth = 0;
+            this.Btn_ModBox.Icon = null;
+            this.Btn_ModBox.Location = new System.Drawing.Point(125, 7);
+            this.Btn_ModBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_ModBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_ModBox.Name = "Btn_ModBox";
+            this.Btn_ModBox.Primary = true;
+            this.Btn_ModBox.Size = new System.Drawing.Size(101, 36);
+            this.Btn_ModBox.TabIndex = 16;
+            this.Btn_ModBox.Text = "Modify Box";
+            this.Btn_ModBox.UseVisualStyleBackColor = true;
             // 
-            // materialRaisedButton2
+            // Btn_AddNewBox
             // 
-            this.materialRaisedButton2.AutoSize = true;
-            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(7, 7);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(146, 36);
-            this.materialRaisedButton2.TabIndex = 15;
-            this.materialRaisedButton2.Text = "Add New Counter";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.Btn_AddNewBox.AutoSize = true;
+            this.Btn_AddNewBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_AddNewBox.Depth = 0;
+            this.Btn_AddNewBox.Icon = null;
+            this.Btn_AddNewBox.Location = new System.Drawing.Point(7, 7);
+            this.Btn_AddNewBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_AddNewBox.Name = "Btn_AddNewBox";
+            this.Btn_AddNewBox.Primary = true;
+            this.Btn_AddNewBox.Size = new System.Drawing.Size(111, 36);
+            this.Btn_AddNewBox.TabIndex = 15;
+            this.Btn_AddNewBox.Text = "Add New Box";
+            this.Btn_AddNewBox.UseVisualStyleBackColor = true;
             // 
             // DGV_Boxes
             // 
@@ -855,12 +855,12 @@
         private MaterialSkin.Controls.MaterialFlatButton Btn_ModCounter;
         private MaterialSkin.Controls.MaterialRaisedButton Btn_AddNewCounter;
         private System.Windows.Forms.DataGridView DGV_Counters;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_ResetBoxes;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton4;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Txt_SearchByBoxName;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_DeleteBox;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_ModBox;
+        private MaterialSkin.Controls.MaterialRaisedButton Btn_AddNewBox;
         private System.Windows.Forms.DataGridView DGV_Boxes;
     }
 }

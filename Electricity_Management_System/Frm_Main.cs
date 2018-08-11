@@ -34,14 +34,16 @@ namespace Electricity_Management_System
             //Addition Buttons
             Btn_AddNewCustomer.Click += new EventHandler(Btn_AddNewCustomer_Click);
             Btn_AddNewCounter.Click += new EventHandler(Btn_AddNewCounter_Click);
+            Btn_AddNewBox.Click += new EventHandler(Btn_AddNewBox_Click);
 
             //Modification Buttons
             Btn_ModCustomer.Click += new EventHandler(Btn_ModCustomer_Click);
             Btn_ModCounter.Click += new EventHandler(Btn_ModCounter_Click);
+            Btn_ModBox.Click += new EventHandler(Btn_ModBox_Click);
 
             //Reset Buttons
             Btn_ResetCustomers.Click += new EventHandler(Btn_ResetCustomers_Click);
-            materialFlatButton2.Click += new EventHandler(Btn_ResetCounters_Click);
+            Btn_ResetBoxes.Click += new EventHandler(Btn_ResetCounters_Click);
 
             //Bottom Buttons
             Btn_Help.Click += new EventHandler(Btn_Help_Click);
@@ -82,6 +84,10 @@ namespace Electricity_Management_System
             {
                 UpdateCounters();
             }
+            else if (Tab_Navigator.SelectedIndex == 3)
+            {
+                UpdateBoxes();
+            }
         }
 
         void Btn_AddNewCustomer_Click(object sender, EventArgs e)
@@ -89,6 +95,13 @@ namespace Electricity_Management_System
             Frm_CustomerEdit frm = new Frm_CustomerEdit();
             frm.ShowDialog();
             UpdateCustomers();
+        }
+
+        void Btn_AddNewBox_Click(object sender, EventArgs args)
+        {
+            Frm_BoxEdit frm = new Frm_BoxEdit();
+            frm.ShowDialog();
+            UpdateBoxes();
         }
 
         void UpdateCustomers()
@@ -114,6 +127,16 @@ namespace Electricity_Management_System
             FillDGV(DGV_Counters, "SELECT counter_id AS [ID], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter] WHERE monthly_cost LIKE '" + MONTHLY_COST + "%'");
         }
 
+        void UpdateBoxes()
+        {
+            FillDGV(DGV_Boxes, "SELECT box_id AS [ID], box_name AS [Box Name], street_name + ', ' + region_name AS [Address] FROM box b, street s, region r WHERE b.street_id = s.street_id AND s.region_id = r.region_id");
+        }
+
+        void UpdateBoxes(String BOX_NAME)
+        {
+            FillDGV(DGV_Boxes, "SELECT box_id AS [ID], box_name AS [Box Name], street_name + ', ' + region_name AS [Address] FROM box b, street s, region r WHERE b.street_id = s.street_id AND s.region_id = r.region_id WHERE box_name LIKE '%" + BOX_NAME + "%'");
+        }
+
         void Btn_ModCustomer_Click(object sender, EventArgs e)
         {
             if (DGV_Customers.SelectedRows.Count > 0)
@@ -127,6 +150,21 @@ namespace Electricity_Management_System
                 MessageBox.Show("Please select a customer!");
             }
             
+        }
+
+        void Btn_ModBox_Click(object sender, EventArgs e)
+        {
+            if (DGV_Boxes.SelectedRows.Count > 0)
+            {
+                Frm_BoxEdit frm = new Frm_BoxEdit(int.Parse(DGV_Boxes.SelectedRows[0].Cells[0].Value.ToString()));
+                frm.ShowDialog();
+                UpdateCustomers();
+            }
+            else
+            {
+                MessageBox.Show("Please select a customer!");
+            }
+
         }
 
         void DGV_Customers_Click(object sender, EventArgs e)
