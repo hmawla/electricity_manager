@@ -28,6 +28,7 @@ namespace Electricity_Management_System
             
             Btn_Exit.Click += new EventHandler(Btn_Exit_Click);
             Btn_Edit.Click += new EventHandler(Btn_Edit_Click);
+            this.Click += new EventHandler(this_click);
 
         }
 
@@ -53,6 +54,10 @@ namespace Electricity_Management_System
             frm.ShowDialog();
             frm.Dispose();
             UpdateDetails();
+        }
+        void this_click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

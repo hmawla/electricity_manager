@@ -208,7 +208,8 @@
             this.MaximumSize = new System.Drawing.Size(450, 383);
             this.MinimumSize = new System.Drawing.Size(377, 383);
             this.Name = "Frm_CustomerDetails";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.95D;
+            this.ShowInTaskbar = false;
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Card";

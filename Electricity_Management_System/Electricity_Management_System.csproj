@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_CounterDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CounterDetails.Designer.cs">
+      <DependentUpon>Frm_CounterDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_CounterEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="OleDb_Tools.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_CounterDetails.resx">
+      <DependentUpon>Frm_CounterDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_CounterEdit.resx">
       <DependentUpon>Frm_CounterEdit.cs</DependentUpon>
     </EmbeddedResource>
