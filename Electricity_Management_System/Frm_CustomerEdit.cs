@@ -48,6 +48,7 @@ namespace Electricity_Management_System
             CBox_Street.SelectedIndexChanged += new EventHandler(CBox_streets_SelectedIndexChanged);
             CBox_Street.TextChanged += new EventHandler(CBox_Street_TextChanged);
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
+            Btn_New.Click += new EventHandler(Btn_New_Click);
 
         }
 
@@ -177,6 +178,16 @@ namespace Electricity_Management_System
                 CBox_Building.Text = "";
                 EditingStreet = false;
             }
+        }
+
+        void Btn_New_Click(object sender, EventArgs e)
+        {
+            Frm_CounterEdit frm = new Frm_CounterEdit();
+            int NEW_COUNTER_ID = frm.ShowNewDialog();
+            frm.Dispose();
+            FillCBox(Cbox_Counter, "SELECT [counter_id] FROM [counter]", "counter_id", "counter_id");
+            Cbox_Counter.SelectedValue = NEW_COUNTER_ID;
+
         }
     }
 }

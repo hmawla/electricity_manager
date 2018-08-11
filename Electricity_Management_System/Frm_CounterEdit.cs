@@ -18,6 +18,7 @@ namespace Electricity_Management_System
         private float TOTAL_USAGE;
         private int MONTHLY_COST;
         private int BOX_ID;
+        private Boolean OutSide = false;
         private Boolean Editing;
 
         public Frm_CounterEdit()
@@ -67,6 +68,13 @@ namespace Electricity_Management_System
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
 
         }
+        
+        public int ShowNewDialog()
+        {
+            OutSide = true;
+            ShowDialog();
+            return COUNTER_ID;
+        }
 
         void Txt_InitialUsage_Click(object sender, EventArgs args)
         {
@@ -90,7 +98,15 @@ namespace Electricity_Management_System
                         MONTHLY_COST = (int)Txt_MonthlyCost.Value;
                         BOX_ID = (int)Cbox_Box.SelectedValue;
                         ExecuteQuery("UPDATE [counter] SET total_usage =  " + TOTAL_USAGE + ", monthly_cost = " + MONTHLY_COST + ", box_id =  " + BOX_ID + " WHERE counter_id = " + COUNTER_ID);
-                        this.Dispose();
+                        if (!OutSide)
+                        {
+                            this.Dispose();
+                        }
+                        else
+                        {
+                            Hide();
+                        }
+                        
                     }
                 }
                 else
@@ -102,7 +118,14 @@ namespace Electricity_Management_System
                         MONTHLY_COST = (int)Txt_MonthlyCost.Value;
                         BOX_ID = (int)Cbox_Box.SelectedValue;
                         ExecuteQuery("INSERT INTO [counter] VALUES(" + COUNTER_ID + ", " + TOTAL_USAGE + ", " + MONTHLY_COST + ", " + BOX_ID + ")");
-                        this.Dispose();
+                        if (!OutSide)
+                        {
+                            this.Dispose();
+                        }
+                        else
+                        {
+                            Hide();
+                        }
                     }
                 }
                 

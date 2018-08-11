@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
@@ -66,18 +66,18 @@
             this.Btn_AddNewCounter = new MaterialSkin.Controls.MaterialRaisedButton();
             this.DGV_Counters = new System.Windows.Forms.DataGridView();
             this.Tab_Boxes = new System.Windows.Forms.TabPage();
-            this.Tab_Invoices = new System.Windows.Forms.TabPage();
-            this.Tab_General = new System.Windows.Forms.TabPage();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton4 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_Boxes = new System.Windows.Forms.DataGridView();
+            this.Tab_Invoices = new System.Windows.Forms.TabPage();
+            this.Tab_General = new System.Windows.Forms.TabPage();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.Btn_Help = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.Btn_About = new MaterialSkin.Controls.MaterialFlatButton();
             this.Tab_Navigator.SuspendLayout();
             this.Tab_Info.SuspendLayout();
             this.Tab_Customers.SuspendLayout();
@@ -85,7 +85,7 @@
             this.Tab_Counters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Counters)).BeginInit();
             this.Tab_Boxes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Boxes)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -393,28 +393,28 @@
             this.DGV_Customers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DGV_Customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Customers.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Customers.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Customers.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Customers.GridColor = System.Drawing.Color.Black;
             this.DGV_Customers.Location = new System.Drawing.Point(6, 125);
             this.DGV_Customers.MultiSelect = false;
             this.DGV_Customers.Name = "DGV_Customers";
             this.DGV_Customers.ReadOnly = true;
             this.DGV_Customers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Customers.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Customers.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Customers.RowHeadersVisible = false;
             this.DGV_Customers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Customers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -543,28 +543,28 @@
             this.DGV_Counters.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DGV_Counters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Counters.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Counters.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Counters.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Counters.GridColor = System.Drawing.Color.Black;
             this.DGV_Counters.Location = new System.Drawing.Point(6, 123);
             this.DGV_Counters.MultiSelect = false;
             this.DGV_Counters.Name = "DGV_Counters";
             this.DGV_Counters.ReadOnly = true;
             this.DGV_Counters.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Counters.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Counters.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_Counters.RowHeadersVisible = false;
             this.DGV_Counters.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Counters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -580,76 +580,12 @@
             this.Tab_Boxes.Controls.Add(this.materialFlatButton3);
             this.Tab_Boxes.Controls.Add(this.materialFlatButton4);
             this.Tab_Boxes.Controls.Add(this.materialRaisedButton2);
-            this.Tab_Boxes.Controls.Add(this.dataGridView1);
+            this.Tab_Boxes.Controls.Add(this.DGV_Boxes);
             this.Tab_Boxes.Location = new System.Drawing.Point(4, 22);
             this.Tab_Boxes.Name = "Tab_Boxes";
             this.Tab_Boxes.Size = new System.Drawing.Size(800, 379);
             this.Tab_Boxes.TabIndex = 4;
             this.Tab_Boxes.Text = "BOXES";
-            // 
-            // Tab_Invoices
-            // 
-            this.Tab_Invoices.Location = new System.Drawing.Point(4, 22);
-            this.Tab_Invoices.Name = "Tab_Invoices";
-            this.Tab_Invoices.Size = new System.Drawing.Size(800, 379);
-            this.Tab_Invoices.TabIndex = 3;
-            this.Tab_Invoices.Text = "INVOICES";
-            this.Tab_Invoices.UseVisualStyleBackColor = true;
-            // 
-            // Tab_General
-            // 
-            this.Tab_General.Location = new System.Drawing.Point(4, 22);
-            this.Tab_General.Name = "Tab_General";
-            this.Tab_General.Size = new System.Drawing.Size(800, 379);
-            this.Tab_General.TabIndex = 5;
-            this.Tab_General.Text = "GENERAL";
-            this.Tab_General.UseVisualStyleBackColor = true;
-            // 
-            // materialDivider1
-            // 
-            this.materialDivider1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(-1, 511);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(836, 1);
-            this.materialDivider1.TabIndex = 2;
-            this.materialDivider1.Text = "materialDivider1";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(765, 518);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(55, 36);
-            this.materialRaisedButton1.TabIndex = 3;
-            this.materialRaisedButton1.Text = "HELP";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(692, 518);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = true;
-            this.materialFlatButton1.Size = new System.Drawing.Size(66, 36);
-            this.materialFlatButton1.TabIndex = 4;
-            this.materialFlatButton1.Text = "About";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
             // 
             // materialFlatButton2
             // 
@@ -744,19 +680,19 @@
             this.materialRaisedButton2.Text = "Add New Counter";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DGV_Boxes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DGV_Boxes.AllowUserToAddRows = false;
+            this.DGV_Boxes.AllowUserToDeleteRows = false;
+            this.DGV_Boxes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGV_Boxes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV_Boxes.BackgroundColor = System.Drawing.Color.White;
+            this.DGV_Boxes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DGV_Boxes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGV_Boxes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Boxes.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8.25F);
@@ -764,13 +700,13 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 123);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGV_Boxes.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DGV_Boxes.GridColor = System.Drawing.Color.Black;
+            this.DGV_Boxes.Location = new System.Drawing.Point(6, 123);
+            this.DGV_Boxes.MultiSelect = false;
+            this.DGV_Boxes.Name = "DGV_Boxes";
+            this.DGV_Boxes.ReadOnly = true;
+            this.DGV_Boxes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F);
@@ -778,12 +714,76 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(788, 248);
-            this.dataGridView1.TabIndex = 14;
+            this.DGV_Boxes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DGV_Boxes.RowHeadersVisible = false;
+            this.DGV_Boxes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DGV_Boxes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Boxes.Size = new System.Drawing.Size(788, 248);
+            this.DGV_Boxes.TabIndex = 14;
+            // 
+            // Tab_Invoices
+            // 
+            this.Tab_Invoices.Location = new System.Drawing.Point(4, 22);
+            this.Tab_Invoices.Name = "Tab_Invoices";
+            this.Tab_Invoices.Size = new System.Drawing.Size(800, 379);
+            this.Tab_Invoices.TabIndex = 3;
+            this.Tab_Invoices.Text = "INVOICES";
+            this.Tab_Invoices.UseVisualStyleBackColor = true;
+            // 
+            // Tab_General
+            // 
+            this.Tab_General.Location = new System.Drawing.Point(4, 22);
+            this.Tab_General.Name = "Tab_General";
+            this.Tab_General.Size = new System.Drawing.Size(800, 379);
+            this.Tab_General.TabIndex = 5;
+            this.Tab_General.Text = "GENERAL";
+            this.Tab_General.UseVisualStyleBackColor = true;
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(-1, 511);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(836, 1);
+            this.materialDivider1.TabIndex = 2;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // Btn_Help
+            // 
+            this.Btn_Help.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Help.AutoSize = true;
+            this.Btn_Help.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Help.Depth = 0;
+            this.Btn_Help.Icon = null;
+            this.Btn_Help.Location = new System.Drawing.Point(765, 518);
+            this.Btn_Help.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Help.Name = "Btn_Help";
+            this.Btn_Help.Primary = true;
+            this.Btn_Help.Size = new System.Drawing.Size(55, 36);
+            this.Btn_Help.TabIndex = 3;
+            this.Btn_Help.Text = "HELP";
+            this.Btn_Help.UseVisualStyleBackColor = true;
+            // 
+            // Btn_About
+            // 
+            this.Btn_About.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_About.AutoSize = true;
+            this.Btn_About.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_About.Depth = 0;
+            this.Btn_About.Icon = null;
+            this.Btn_About.Location = new System.Drawing.Point(692, 518);
+            this.Btn_About.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_About.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_About.Name = "Btn_About";
+            this.Btn_About.Primary = true;
+            this.Btn_About.Size = new System.Drawing.Size(66, 36);
+            this.Btn_About.TabIndex = 4;
+            this.Btn_About.Text = "About";
+            this.Btn_About.UseVisualStyleBackColor = true;
             // 
             // Frm_Main
             // 
@@ -791,8 +791,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(832, 561);
-            this.Controls.Add(this.materialFlatButton1);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.Btn_About);
+            this.Controls.Add(this.Btn_Help);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.Tab_Navigator);
             this.Controls.Add(this.materialTabSelector1);
@@ -810,7 +810,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Counters)).EndInit();
             this.Tab_Boxes.ResumeLayout(false);
             this.Tab_Boxes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Boxes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -823,8 +823,8 @@
         private System.Windows.Forms.TabPage Tab_Info;
         private System.Windows.Forms.TabPage Tab_Customers;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton Btn_Help;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_About;
         private System.Windows.Forms.TabPage Tab_Counters;
         private System.Windows.Forms.TabPage Tab_Boxes;
         private System.Windows.Forms.TabPage Tab_Invoices;
@@ -861,7 +861,7 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton4;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_Boxes;
     }
 }
 

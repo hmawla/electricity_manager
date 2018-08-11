@@ -43,11 +43,28 @@ namespace Electricity_Management_System
             Btn_ResetCustomers.Click += new EventHandler(Btn_ResetCustomers_Click);
             materialFlatButton2.Click += new EventHandler(Btn_ResetCounters_Click);
 
+            //Bottom Buttons
+            Btn_Help.Click += new EventHandler(Btn_Help_Click);
+            Btn_About.Click += new EventHandler(Btn_About_Click);
+
             //Theme Manager
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
+        }
+
+        void Btn_Help_Click(object sender, EventArgs e)
+        {
+            Frm_Help frm = new Frm_Help();
+            frm.ShowDialog();
+        }
+
+        void Btn_About_Click(object sender, EventArgs e)
+        {
+            Frm_About frm = new Frm_About();
+            frm.ShowDialog();
+
         }
 
         void Main_OnLoad(object sender, EventArgs e)

@@ -180,6 +180,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_CounterEdit";
             this.Sizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Counter";
             ((System.ComponentModel.ISupportInitialize)(this.Txt_InitialUsage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_MonthlyCost)).EndInit();
