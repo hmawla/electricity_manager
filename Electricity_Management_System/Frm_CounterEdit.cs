@@ -29,6 +29,7 @@ namespace Electricity_Management_System
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
 
+            Btn_New.Click += new EventHandler(Btn_New_Click);
             COUNTER_ID = GenID("[counter]", "counter_id");
             Lbl_Counter_ID.Text = "Counter ID: " + COUNTER_ID;
             Editing = false;
@@ -68,7 +69,17 @@ namespace Electricity_Management_System
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
 
         }
-        
+
+        void Btn_New_Click(object sender, EventArgs args)
+        {
+            Frm_BoxEdit frm = new Frm_BoxEdit();
+            int NEW_Box_ID = frm.ShowNewDialog();
+            frm.Dispose();
+            FillCBox(Cbox_Box, "SELECT box_id FROM box", "box_id", "box_id");
+            Cbox_Box.SelectedValue = NEW_Box_ID;
+        }
+
+
         public int ShowNewDialog()
         {
             OutSide = true;

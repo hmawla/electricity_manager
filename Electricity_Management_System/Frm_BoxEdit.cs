@@ -62,6 +62,8 @@ namespace Electricity_Management_System
             FillCBox(CBox_Street, "SELECT street_id, street_name FROM street WHERE region_id = " + REGION_ID, "street_id", "street_name");
             CBox_Street.SelectedValue = STREET_ID;
 
+            Txt_Box_Name.Text = BOX_NAME;
+
             CBox_Region.SelectedIndexChanged += new EventHandler(CBox_regions_SelectedIndexChanged);
             CBox_Region.TextChanged += new EventHandler(CBox_Region_TextChanged);
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);

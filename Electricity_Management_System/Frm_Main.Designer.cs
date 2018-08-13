@@ -37,17 +37,17 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.Tab_Navigator = new MaterialSkin.Controls.MaterialTabControl();
             this.Tab_Info = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
+            this.Lbl_info_MonthlyIncome = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Lbl_info_NumberOfCustomers = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Lbl_info_NumberOfBoxes = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Lbl_info_NumberOfCounters = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Lbl_info_PricePerWatt = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Lbl_info_NewestCustomer = new System.Windows.Forms.Label();
             this.lable1 = new System.Windows.Forms.Label();
             this.Tab_Customers = new System.Windows.Forms.TabPage();
             this.Btn_ResetCustomers = new MaterialSkin.Controls.MaterialFlatButton();
@@ -122,17 +122,17 @@
             // 
             // Tab_Info
             // 
-            this.Tab_Info.Controls.Add(this.label10);
+            this.Tab_Info.Controls.Add(this.Lbl_info_MonthlyIncome);
             this.Tab_Info.Controls.Add(this.label11);
-            this.Tab_Info.Controls.Add(this.label8);
+            this.Tab_Info.Controls.Add(this.Lbl_info_NumberOfCustomers);
             this.Tab_Info.Controls.Add(this.label9);
-            this.Tab_Info.Controls.Add(this.label6);
+            this.Tab_Info.Controls.Add(this.Lbl_info_NumberOfBoxes);
             this.Tab_Info.Controls.Add(this.label7);
-            this.Tab_Info.Controls.Add(this.label4);
+            this.Tab_Info.Controls.Add(this.Lbl_info_NumberOfCounters);
             this.Tab_Info.Controls.Add(this.label5);
-            this.Tab_Info.Controls.Add(this.label2);
+            this.Tab_Info.Controls.Add(this.Lbl_info_PricePerWatt);
             this.Tab_Info.Controls.Add(this.label3);
-            this.Tab_Info.Controls.Add(this.label1);
+            this.Tab_Info.Controls.Add(this.Lbl_info_NewestCustomer);
             this.Tab_Info.Controls.Add(this.lable1);
             this.Tab_Info.Location = new System.Drawing.Point(4, 22);
             this.Tab_Info.Name = "Tab_Info";
@@ -142,15 +142,15 @@
             this.Tab_Info.Text = "INFO";
             this.Tab_Info.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // Lbl_info_MonthlyIncome
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 109);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(348, 38);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "<Monthly_Income> L.L.";
+            this.Lbl_info_MonthlyIncome.AutoSize = true;
+            this.Lbl_info_MonthlyIncome.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_info_MonthlyIncome.Location = new System.Drawing.Point(8, 109);
+            this.Lbl_info_MonthlyIncome.Name = "Lbl_info_MonthlyIncome";
+            this.Lbl_info_MonthlyIncome.Size = new System.Drawing.Size(348, 38);
+            this.Lbl_info_MonthlyIncome.TabIndex = 16;
+            this.Lbl_info_MonthlyIncome.Text = "<Monthly_Income> L.L.";
             // 
             // label11
             // 
@@ -162,16 +162,16 @@
             this.label11.TabIndex = 15;
             this.label11.Text = "Approximate Monthly Income:";
             // 
-            // label8
+            // Lbl_info_NumberOfCustomers
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 261);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(369, 38);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "<COUNT(CUSTOMERS)>";
+            this.Lbl_info_NumberOfCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Lbl_info_NumberOfCustomers.AutoSize = true;
+            this.Lbl_info_NumberOfCustomers.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_info_NumberOfCustomers.Location = new System.Drawing.Point(8, 261);
+            this.Lbl_info_NumberOfCustomers.Name = "Lbl_info_NumberOfCustomers";
+            this.Lbl_info_NumberOfCustomers.Size = new System.Drawing.Size(369, 38);
+            this.Lbl_info_NumberOfCustomers.TabIndex = 14;
+            this.Lbl_info_NumberOfCustomers.Text = "<COUNT(CUSTOMERS)>";
             // 
             // label9
             // 
@@ -184,16 +184,16 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Number Of Customers:";
             // 
-            // label6
+            // Lbl_info_NumberOfBoxes
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(452, 109);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(279, 38);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "<COUNT(BOXES)>";
+            this.Lbl_info_NumberOfBoxes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_info_NumberOfBoxes.AutoSize = true;
+            this.Lbl_info_NumberOfBoxes.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_info_NumberOfBoxes.Location = new System.Drawing.Point(452, 109);
+            this.Lbl_info_NumberOfBoxes.Name = "Lbl_info_NumberOfBoxes";
+            this.Lbl_info_NumberOfBoxes.Size = new System.Drawing.Size(279, 38);
+            this.Lbl_info_NumberOfBoxes.TabIndex = 12;
+            this.Lbl_info_NumberOfBoxes.Text = "<COUNT(BOXES)>";
             // 
             // label7
             // 
@@ -206,16 +206,16 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Number Of Boxes:";
             // 
-            // label4
+            // Lbl_info_NumberOfCounters
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(450, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(344, 38);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "<COUNT(COUNTERS)>";
+            this.Lbl_info_NumberOfCounters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_info_NumberOfCounters.AutoSize = true;
+            this.Lbl_info_NumberOfCounters.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_info_NumberOfCounters.Location = new System.Drawing.Point(450, 32);
+            this.Lbl_info_NumberOfCounters.Name = "Lbl_info_NumberOfCounters";
+            this.Lbl_info_NumberOfCounters.Size = new System.Drawing.Size(344, 38);
+            this.Lbl_info_NumberOfCounters.TabIndex = 10;
+            this.Lbl_info_NumberOfCounters.Text = "<COUNT(COUNTERS)>";
             // 
             // label5
             // 
@@ -228,15 +228,15 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Number Of Counters:";
             // 
-            // label2
+            // Lbl_info_PricePerWatt
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(334, 38);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "<Value_Per_Watt> L.L.";
+            this.Lbl_info_PricePerWatt.AutoSize = true;
+            this.Lbl_info_PricePerWatt.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_info_PricePerWatt.Location = new System.Drawing.Point(6, 32);
+            this.Lbl_info_PricePerWatt.Name = "Lbl_info_PricePerWatt";
+            this.Lbl_info_PricePerWatt.Size = new System.Drawing.Size(334, 38);
+            this.Lbl_info_PricePerWatt.TabIndex = 8;
+            this.Lbl_info_PricePerWatt.Text = "<Value_Per_Watt> L.L.";
             // 
             // label3
             // 
@@ -248,16 +248,16 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Current Price Per Watt:";
             // 
-            // label1
+            // Lbl_info_NewestCustomer
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 338);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 38);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "<Customer_Name>";
+            this.Lbl_info_NewestCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Lbl_info_NewestCustomer.AutoSize = true;
+            this.Lbl_info_NewestCustomer.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_info_NewestCustomer.Location = new System.Drawing.Point(6, 338);
+            this.Lbl_info_NewestCustomer.Name = "Lbl_info_NewestCustomer";
+            this.Lbl_info_NewestCustomer.Size = new System.Drawing.Size(290, 38);
+            this.Lbl_info_NewestCustomer.TabIndex = 6;
+            this.Lbl_info_NewestCustomer.Text = "<Customer_Name>";
             // 
             // lable1
             // 
@@ -836,17 +836,17 @@
         private MaterialSkin.Controls.MaterialFlatButton Btn_ResetCustomers;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField Txt_FindCustomerByName;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Lbl_info_NumberOfCustomers;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Lbl_info_NumberOfBoxes;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Lbl_info_NumberOfCounters;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Lbl_info_PricePerWatt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_info_NewestCustomer;
         private System.Windows.Forms.Label lable1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label Lbl_info_MonthlyIncome;
         private System.Windows.Forms.Label label11;
         private MaterialSkin.Controls.MaterialFlatButton Btn_ResetCounters;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;

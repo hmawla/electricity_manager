@@ -8,15 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using static Electricity_Management_System.OleDb_Tools;
 
 namespace Electricity_Management_System
 {
     public partial class Frm_Main : MaterialSkin.Controls.MaterialForm
     {
+        private String info_PricePerWatt;
+        private int info_NumberOfBoxes;
+        private int info_NumberOfCounters;
+        private int info_NumberOfCustomers;
+        private String info_NewestCustomer;
+        private double info_ApproximateIncome;
+
+
         public Frm_Main()
         {
             InitializeComponent();
+            UpdateInfo();
 
             this.Load += new EventHandler(Main_OnLoad);
 
@@ -74,9 +84,46 @@ namespace Electricity_Management_System
             OpenConnection();
         }
 
+        void DataBackup()
+        {
+            
+        }
+
+        void UpdateInfo()
+        {
+            DataTable dt = new DataTable();
+            dt = ReadQueryOut("SELECT COUNT(box_id) FROM box");
+            info_NumberOfBoxes = int.Parse(dt.Rows[0].ItemArray[0].ToString());
+            dt = ReadQueryOut("SELECT COUNT(counter_id) FROM [counter]");
+            info_NumberOfCounters = int.Parse(dt.Rows[0].ItemArray[0].ToString());
+            dt = ReadQueryOut("SELECT COUNT(customer_id) FROM customer");
+            info_NumberOfCustomers = int.Parse(dt.Rows[0].ItemArray[0].ToString());
+            dt = ReadQueryOut("SELECT customer_id, customer_name FROM customer WHERE customer_id = (SELECT MAX(customer_id) FROM customer)");
+            if (dt.Rows.Count > 0)
+            {
+                info_NewestCustomer = "(" + dt.Rows[0].ItemArray[0] + ") " + dt.Rows[0].ItemArray[1];
+            }
+            else
+            {
+                info_NewestCustomer = "No New Customers!";
+            }
+
+            Lbl_info_NumberOfBoxes.Text = info_NumberOfBoxes.ToString();
+            Lbl_info_NumberOfCounters.Text = info_NumberOfCounters.ToString();
+            Lbl_info_NumberOfCustomers.Text = info_NumberOfCustomers.ToString();
+
+            Lbl_info_NewestCustomer.Text = info_NewestCustomer;
+            
+
+        }
+
         void Tab_Navigator_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Tab_Navigator.SelectedIndex == 1)
+            if (Tab_Navigator.SelectedIndex == 0)
+            {
+                UpdateInfo();
+            }
+            else if (Tab_Navigator.SelectedIndex == 1)
             {
                 UpdateCustomers();
             }
@@ -158,11 +205,11 @@ namespace Electricity_Management_System
             {
                 Frm_BoxEdit frm = new Frm_BoxEdit(int.Parse(DGV_Boxes.SelectedRows[0].Cells[0].Value.ToString()));
                 frm.ShowDialog();
-                UpdateCustomers();
+                UpdateBoxes();
             }
             else
             {
-                MessageBox.Show("Please select a customer!");
+                MessageBox.Show("Please select a box!");
             }
 
         }
