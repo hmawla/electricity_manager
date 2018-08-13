@@ -82,11 +82,18 @@ namespace Electricity_Management_System
         void Main_OnLoad(object sender, EventArgs e)
         {
             OpenConnection();
+            //DataBackup();
         }
 
         void DataBackup()
         {
-            
+            DataTable dt = new DataTable();
+            dt = ReadQueryOut("SELECT backup_date FROM backup WHERE backup_date = date()");
+            if (dt.Rows.Count == 0)
+            {
+                File.Copy("elect_db.accdb", "Backups/" + DateTime.Now.Day + "_" + DateTime.Now.Month +"_" + DateTime.Now.Year + ".bak");
+                ExecuteQuery("INSERT INTO backup(backup_date) VALUES(date())");
+            }
         }
 
         void UpdateInfo()
