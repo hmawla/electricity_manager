@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static Electricity_Management_System.OleDb_Tools;
+using Microsoft.Reporting.WinForms;
 
 namespace Electricity_Management_System
 {
@@ -21,6 +22,7 @@ namespace Electricity_Management_System
         private int info_NumberOfCustomers;
         private String info_NewestCustomer;
         private double info_ApproximateIncome;
+        CRpt_InvoiceCustomer rpt;
 
 
         public Frm_Main()
@@ -82,6 +84,10 @@ namespace Electricity_Management_System
         void Main_OnLoad(object sender, EventArgs e)
         {
             OpenConnection();
+            rpt = new CRpt_InvoiceCustomer();
+            rpt.DataSourceConnections[0].SetConnection(getDBFile(), "", "Admin", "");
+            //((CrystalDecisions.CrystalReports.Engine.TextObject)rpt.Section3.ReportObjects["Customer_Name"]).Text = "Some Really Long Customer Name";
+            rpt.Refresh();
             //DataBackup();
         }
 
@@ -142,6 +148,16 @@ namespace Electricity_Management_System
             {
                 UpdateBoxes();
             }
+            else if (Tab_Navigator.SelectedIndex == 4)
+            {
+            }
+            else if (Tab_Navigator.SelectedIndex == 5)
+            {
+                DataTable dt = ReadQueryOut("SELECT customer_id, customer_name FROM customer WHERE customer_id = (SELECT MAX(customer_id) FROM customer)");
+                rpt.Database.Tables[0].SetDataSource(dt);
+                crystalReportViewer1.ReportSource = rpt;
+                crystalReportViewer1.RefreshReport();
+            }
         }
 
         void Btn_AddNewCustomer_Click(object sender, EventArgs e)
@@ -161,24 +177,24 @@ namespace Electricity_Management_System
         void UpdateCustomers()
         {
             Txt_FindCustomerByName.Text = "";
-            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
+            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], customer_debt AS [Debt in LL], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
         }
         
 
         void UpdateCustomers(String CUSTOMER_NAME)
         {
-            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id AND customer_name LIKE '%" + CUSTOMER_NAME + "%'");
+            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], customer_debt AS [Debt in LL], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id AND customer_name LIKE '%" + CUSTOMER_NAME + "%'");
         }
 
         void UpdateCounters()
         {
             Txt_CounterFilterByCost.Text = "";
-            FillDGV(DGV_Counters, "SELECT counter_id AS [ID], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter]");
+            FillDGV(DGV_Counters, "SELECT counter_id AS [ID], ampere_value AS [Type in Ampere], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter]");
         }
 
         void UpdateCounters(String MONTHLY_COST)
         {
-            FillDGV(DGV_Counters, "SELECT counter_id AS [ID], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter] WHERE monthly_cost LIKE '" + MONTHLY_COST + "%'");
+            FillDGV(DGV_Counters, "SELECT counter_id AS [ID], ampere_value AS [Type in Ampere], total_usage AS [Usage in Watt], monthly_cost AS [Cost in LL], box_id AS [Box] FROM [counter] WHERE monthly_cost LIKE '" + MONTHLY_COST + "%'");
         }
 
         void UpdateBoxes()
@@ -297,6 +313,11 @@ namespace Electricity_Management_System
             {
                 MessageBox.Show("Please select a counter!");
             }
+
+        }
+
+        private void Frm_Main_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Btn_Edit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Btn_Exit = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Lbl_CustomerDebt = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -160,7 +162,7 @@
             this.Btn_Edit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Btn_Edit.Depth = 0;
             this.Btn_Edit.Icon = null;
-            this.Btn_Edit.Location = new System.Drawing.Point(22, 335);
+            this.Btn_Edit.Location = new System.Drawing.Point(20, 379);
             this.Btn_Edit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Edit.Name = "Btn_Edit";
             this.Btn_Edit.Primary = true;
@@ -176,7 +178,7 @@
             this.Btn_Exit.BackColor = System.Drawing.Color.White;
             this.Btn_Exit.Depth = 0;
             this.Btn_Exit.Icon = null;
-            this.Btn_Exit.Location = new System.Drawing.Point(79, 335);
+            this.Btn_Exit.Location = new System.Drawing.Point(77, 379);
             this.Btn_Exit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Exit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Exit.Name = "Btn_Exit";
@@ -186,13 +188,39 @@
             this.Btn_Exit.Text = "Close";
             this.Btn_Exit.UseVisualStyleBackColor = false;
             // 
+            // Lbl_CustomerDebt
+            // 
+            this.Lbl_CustomerDebt.AutoSize = true;
+            this.Lbl_CustomerDebt.BackColor = System.Drawing.Color.Transparent;
+            this.Lbl_CustomerDebt.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_CustomerDebt.Location = new System.Drawing.Point(13, 331);
+            this.Lbl_CustomerDebt.MaximumSize = new System.Drawing.Size(350, 29);
+            this.Lbl_CustomerDebt.Name = "Lbl_CustomerDebt";
+            this.Lbl_CustomerDebt.Size = new System.Drawing.Size(134, 29);
+            this.Lbl_CustomerDebt.TabIndex = 13;
+            this.Lbl_CustomerDebt.Text = "<Debt> L.L.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label7.Location = new System.Drawing.Point(13, 311);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Customer Debt:";
+            // 
             // Frm_CustomerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(377, 383);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(377, 430);
             this.ControlBox = false;
+            this.Controls.Add(this.Lbl_CustomerDebt);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Btn_Exit);
             this.Controls.Add(this.Btn_Edit);
             this.Controls.Add(this.Lbl_Address);
@@ -205,7 +233,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Lbl_CustomerID);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(450, 383);
             this.MinimumSize = new System.Drawing.Size(377, 383);
             this.Name = "Frm_CustomerDetails";
             this.Opacity = 0.95D;
@@ -232,5 +259,7 @@
         private System.Windows.Forms.Label label5;
         private MaterialSkin.Controls.MaterialRaisedButton Btn_Edit;
         private MaterialSkin.Controls.MaterialFlatButton Btn_Exit;
+        private System.Windows.Forms.Label Lbl_CustomerDebt;
+        private System.Windows.Forms.Label label7;
     }
 }

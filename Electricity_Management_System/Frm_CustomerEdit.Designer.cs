@@ -45,7 +45,10 @@
             this.CBox_Street = new System.Windows.Forms.ComboBox();
             this.Txt_Building = new MaterialSkin.Controls.MaterialLabel();
             this.CBox_Building = new System.Windows.Forms.ComboBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.Txt_CustomerDebt = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_Customer_Floor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txt_CustomerDebt)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Customer_Name
@@ -61,7 +64,7 @@
             this.Txt_Customer_Name.SelectionLength = 0;
             this.Txt_Customer_Name.SelectionStart = 0;
             this.Txt_Customer_Name.Size = new System.Drawing.Size(139, 23);
-            this.Txt_Customer_Name.TabIndex = 0;
+            this.Txt_Customer_Name.TabIndex = 2;
             this.Txt_Customer_Name.TabStop = false;
             this.Txt_Customer_Name.UseSystemPasswordChar = false;
             // 
@@ -76,7 +79,7 @@
             this.Btn_Submit.Name = "Btn_Submit";
             this.Btn_Submit.Primary = true;
             this.Btn_Submit.Size = new System.Drawing.Size(71, 36);
-            this.Btn_Submit.TabIndex = 1;
+            this.Btn_Submit.TabIndex = 9;
             this.Btn_Submit.Text = "Submit";
             this.Btn_Submit.UseVisualStyleBackColor = true;
             // 
@@ -100,7 +103,7 @@
             this.CBox_Region.Location = new System.Drawing.Point(180, 178);
             this.CBox_Region.Name = "CBox_Region";
             this.CBox_Region.Size = new System.Drawing.Size(145, 27);
-            this.CBox_Region.TabIndex = 3;
+            this.CBox_Region.TabIndex = 5;
             // 
             // Lbl_Customer_Name
             // 
@@ -141,7 +144,7 @@
             this.Txt_Customer_Phone.SelectionLength = 0;
             this.Txt_Customer_Phone.SelectionStart = 0;
             this.Txt_Customer_Phone.Size = new System.Drawing.Size(139, 23);
-            this.Txt_Customer_Phone.TabIndex = 5;
+            this.Txt_Customer_Phone.TabIndex = 3;
             this.Txt_Customer_Phone.TabStop = false;
             this.Txt_Customer_Phone.UseSystemPasswordChar = false;
             // 
@@ -169,7 +172,7 @@
             0});
             this.Txt_Customer_Floor.Name = "Txt_Customer_Floor";
             this.Txt_Customer_Floor.Size = new System.Drawing.Size(139, 25);
-            this.Txt_Customer_Floor.TabIndex = 12;
+            this.Txt_Customer_Floor.TabIndex = 4;
             // 
             // materialLabel4
             // 
@@ -205,7 +208,7 @@
             this.Cbox_Counter.Location = new System.Drawing.Point(102, 107);
             this.Cbox_Counter.Name = "Cbox_Counter";
             this.Cbox_Counter.Size = new System.Drawing.Size(145, 27);
-            this.Cbox_Counter.TabIndex = 14;
+            this.Cbox_Counter.TabIndex = 0;
             // 
             // Btn_New
             // 
@@ -219,7 +222,7 @@
             this.Btn_New.Name = "Btn_New";
             this.Btn_New.Primary = true;
             this.Btn_New.Size = new System.Drawing.Size(51, 36);
-            this.Btn_New.TabIndex = 16;
+            this.Btn_New.TabIndex = 1;
             this.Btn_New.Text = "New";
             this.Btn_New.UseVisualStyleBackColor = true;
             // 
@@ -243,7 +246,7 @@
             this.CBox_Street.Location = new System.Drawing.Point(180, 231);
             this.CBox_Street.Name = "CBox_Street";
             this.CBox_Street.Size = new System.Drawing.Size(145, 27);
-            this.CBox_Street.TabIndex = 17;
+            this.CBox_Street.TabIndex = 6;
             // 
             // Txt_Building
             // 
@@ -265,7 +268,39 @@
             this.CBox_Building.Location = new System.Drawing.Point(180, 284);
             this.CBox_Building.Name = "CBox_Building";
             this.CBox_Building.Size = new System.Drawing.Size(145, 27);
-            this.CBox_Building.TabIndex = 19;
+            this.CBox_Building.TabIndex = 7;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(12, 311);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(44, 19);
+            this.materialLabel3.TabIndex = 22;
+            this.materialLabel3.Text = "Debt:";
+            // 
+            // Txt_CustomerDebt
+            // 
+            this.Txt_CustomerDebt.Font = new System.Drawing.Font("Roboto", 11F);
+            this.Txt_CustomerDebt.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.Txt_CustomerDebt.Location = new System.Drawing.Point(16, 333);
+            this.Txt_CustomerDebt.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.Txt_CustomerDebt.Name = "Txt_CustomerDebt";
+            this.Txt_CustomerDebt.ReadOnly = true;
+            this.Txt_CustomerDebt.Size = new System.Drawing.Size(139, 25);
+            this.Txt_CustomerDebt.TabIndex = 9;
             // 
             // Frm_CustomerEdit
             // 
@@ -273,6 +308,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(341, 382);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.Txt_CustomerDebt);
             this.Controls.Add(this.Txt_Building);
             this.Controls.Add(this.CBox_Building);
             this.Controls.Add(this.materialLabel2);
@@ -299,6 +336,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
             ((System.ComponentModel.ISupportInitialize)(this.Txt_Customer_Floor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txt_CustomerDebt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +361,7 @@
         private System.Windows.Forms.ComboBox CBox_Street;
         private MaterialSkin.Controls.MaterialLabel Txt_Building;
         private System.Windows.Forms.ComboBox CBox_Building;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.NumericUpDown Txt_CustomerDebt;
     }
 }

@@ -35,11 +35,12 @@ namespace Electricity_Management_System
         void UpdateDetails()
         {
             DataTable dt = new DataTable();
-            dt = ReadQueryOut("SELECT total_usage, monthly_cost, box_id FROM [counter] WHERE counter_id = " + COUNTER_ID);
+            dt = ReadQueryOut("SELECT total_usage, monthly_cost, box_id, ampere_value FROM [counter] WHERE counter_id = " + COUNTER_ID);
             Lbl_CounterID.Text = COUNTER_ID.ToString();
-            Lbl_TotalUsage.Text = dt.Rows[0].ItemArray[0].ToString();
-            Lbl_MonthlyCost.Text = dt.Rows[0].ItemArray[1].ToString();
+            Lbl_TotalUsage.Text = dt.Rows[0].ItemArray[0].ToString() + " WATT";
+            Lbl_MonthlyCost.Text = dt.Rows[0].ItemArray[1].ToString() + " L.L.";
             Lbl_BoxID.Text = dt.Rows[0].ItemArray[2].ToString();
+            Lbl_CounterType.Text = dt.Rows[0].ItemArray[3].ToString() + " Ampere";
         }
 
         void Btn_Exit_Click(object sender, EventArgs e)

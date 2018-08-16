@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.Tab_Navigator = new MaterialSkin.Controls.MaterialTabControl();
             this.Tab_Info = new System.Windows.Forms.TabPage();
@@ -74,7 +76,22 @@
             this.Btn_AddNewBox = new MaterialSkin.Controls.MaterialRaisedButton();
             this.DGV_Boxes = new System.Windows.Forms.DataGridView();
             this.Tab_Invoices = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Tab_General = new System.Windows.Forms.TabPage();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.Btn_Help = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Btn_About = new MaterialSkin.Controls.MaterialFlatButton();
@@ -86,6 +103,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Counters)).BeginInit();
             this.Tab_Boxes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Boxes)).BeginInit();
+            this.Tab_Invoices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Tab_General.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -97,7 +117,7 @@
             this.materialTabSelector1.Location = new System.Drawing.Point(-1, 63);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(836, 32);
+            this.materialTabSelector1.Size = new System.Drawing.Size(901, 32);
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
@@ -117,7 +137,7 @@
             this.Tab_Navigator.MouseState = MaterialSkin.MouseState.HOVER;
             this.Tab_Navigator.Name = "Tab_Navigator";
             this.Tab_Navigator.SelectedIndex = 0;
-            this.Tab_Navigator.Size = new System.Drawing.Size(808, 405);
+            this.Tab_Navigator.Size = new System.Drawing.Size(873, 459);
             this.Tab_Navigator.TabIndex = 1;
             // 
             // Tab_Info
@@ -137,7 +157,7 @@
             this.Tab_Info.Location = new System.Drawing.Point(4, 22);
             this.Tab_Info.Name = "Tab_Info";
             this.Tab_Info.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Info.Size = new System.Drawing.Size(800, 379);
+            this.Tab_Info.Size = new System.Drawing.Size(865, 433);
             this.Tab_Info.TabIndex = 0;
             this.Tab_Info.Text = "INFO";
             this.Tab_Info.UseVisualStyleBackColor = true;
@@ -167,7 +187,7 @@
             this.Lbl_info_NumberOfCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_info_NumberOfCustomers.AutoSize = true;
             this.Lbl_info_NumberOfCustomers.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_info_NumberOfCustomers.Location = new System.Drawing.Point(8, 261);
+            this.Lbl_info_NumberOfCustomers.Location = new System.Drawing.Point(8, 290);
             this.Lbl_info_NumberOfCustomers.Name = "Lbl_info_NumberOfCustomers";
             this.Lbl_info_NumberOfCustomers.Size = new System.Drawing.Size(369, 38);
             this.Lbl_info_NumberOfCustomers.TabIndex = 14;
@@ -178,7 +198,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto", 18F);
-            this.label9.Location = new System.Drawing.Point(8, 232);
+            this.label9.Location = new System.Drawing.Point(8, 261);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(258, 29);
             this.label9.TabIndex = 13;
@@ -189,7 +209,7 @@
             this.Lbl_info_NumberOfBoxes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_info_NumberOfBoxes.AutoSize = true;
             this.Lbl_info_NumberOfBoxes.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_info_NumberOfBoxes.Location = new System.Drawing.Point(452, 109);
+            this.Lbl_info_NumberOfBoxes.Location = new System.Drawing.Point(475, 109);
             this.Lbl_info_NumberOfBoxes.Name = "Lbl_info_NumberOfBoxes";
             this.Lbl_info_NumberOfBoxes.Size = new System.Drawing.Size(279, 38);
             this.Lbl_info_NumberOfBoxes.TabIndex = 12;
@@ -200,7 +220,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 18F);
-            this.label7.Location = new System.Drawing.Point(452, 80);
+            this.label7.Location = new System.Drawing.Point(475, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(207, 29);
             this.label7.TabIndex = 11;
@@ -211,7 +231,7 @@
             this.Lbl_info_NumberOfCounters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_info_NumberOfCounters.AutoSize = true;
             this.Lbl_info_NumberOfCounters.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_info_NumberOfCounters.Location = new System.Drawing.Point(450, 32);
+            this.Lbl_info_NumberOfCounters.Location = new System.Drawing.Point(473, 32);
             this.Lbl_info_NumberOfCounters.Name = "Lbl_info_NumberOfCounters";
             this.Lbl_info_NumberOfCounters.Size = new System.Drawing.Size(344, 38);
             this.Lbl_info_NumberOfCounters.TabIndex = 10;
@@ -222,7 +242,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 18F);
-            this.label5.Location = new System.Drawing.Point(450, 3);
+            this.label5.Location = new System.Drawing.Point(473, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(238, 29);
             this.label5.TabIndex = 9;
@@ -253,7 +273,7 @@
             this.Lbl_info_NewestCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_info_NewestCustomer.AutoSize = true;
             this.Lbl_info_NewestCustomer.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_info_NewestCustomer.Location = new System.Drawing.Point(6, 338);
+            this.Lbl_info_NewestCustomer.Location = new System.Drawing.Point(6, 367);
             this.Lbl_info_NewestCustomer.Name = "Lbl_info_NewestCustomer";
             this.Lbl_info_NewestCustomer.Size = new System.Drawing.Size(290, 38);
             this.Lbl_info_NewestCustomer.TabIndex = 6;
@@ -264,7 +284,7 @@
             this.lable1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lable1.AutoSize = true;
             this.lable1.Font = new System.Drawing.Font("Roboto", 18F);
-            this.lable1.Location = new System.Drawing.Point(6, 309);
+            this.lable1.Location = new System.Drawing.Point(6, 338);
             this.lable1.Name = "lable1";
             this.lable1.Size = new System.Drawing.Size(211, 29);
             this.lable1.TabIndex = 5;
@@ -283,7 +303,7 @@
             this.Tab_Customers.Location = new System.Drawing.Point(4, 22);
             this.Tab_Customers.Name = "Tab_Customers";
             this.Tab_Customers.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Customers.Size = new System.Drawing.Size(800, 379);
+            this.Tab_Customers.Size = new System.Drawing.Size(865, 433);
             this.Tab_Customers.TabIndex = 1;
             this.Tab_Customers.Text = "CUSTOMERS";
             // 
@@ -384,9 +404,6 @@
             // 
             this.DGV_Customers.AllowUserToAddRows = false;
             this.DGV_Customers.AllowUserToDeleteRows = false;
-            this.DGV_Customers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Customers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_Customers.BackgroundColor = System.Drawing.Color.White;
             this.DGV_Customers.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -401,8 +418,9 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_Customers.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_Customers.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGV_Customers.GridColor = System.Drawing.Color.Black;
-            this.DGV_Customers.Location = new System.Drawing.Point(6, 125);
+            this.DGV_Customers.Location = new System.Drawing.Point(3, 157);
             this.DGV_Customers.MultiSelect = false;
             this.DGV_Customers.Name = "DGV_Customers";
             this.DGV_Customers.ReadOnly = true;
@@ -418,7 +436,7 @@
             this.DGV_Customers.RowHeadersVisible = false;
             this.DGV_Customers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Customers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Customers.Size = new System.Drawing.Size(788, 248);
+            this.DGV_Customers.Size = new System.Drawing.Size(859, 273);
             this.DGV_Customers.TabIndex = 0;
             // 
             // Tab_Counters
@@ -433,7 +451,7 @@
             this.Tab_Counters.Controls.Add(this.DGV_Counters);
             this.Tab_Counters.Location = new System.Drawing.Point(4, 22);
             this.Tab_Counters.Name = "Tab_Counters";
-            this.Tab_Counters.Size = new System.Drawing.Size(800, 379);
+            this.Tab_Counters.Size = new System.Drawing.Size(842, 404);
             this.Tab_Counters.TabIndex = 2;
             this.Tab_Counters.Text = "COUNTERS";
             // 
@@ -534,9 +552,6 @@
             // 
             this.DGV_Counters.AllowUserToAddRows = false;
             this.DGV_Counters.AllowUserToDeleteRows = false;
-            this.DGV_Counters.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Counters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_Counters.BackgroundColor = System.Drawing.Color.White;
             this.DGV_Counters.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -551,8 +566,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_Counters.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DGV_Counters.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGV_Counters.GridColor = System.Drawing.Color.Black;
-            this.DGV_Counters.Location = new System.Drawing.Point(6, 123);
+            this.DGV_Counters.Location = new System.Drawing.Point(0, 126);
             this.DGV_Counters.MultiSelect = false;
             this.DGV_Counters.Name = "DGV_Counters";
             this.DGV_Counters.ReadOnly = true;
@@ -568,7 +584,7 @@
             this.DGV_Counters.RowHeadersVisible = false;
             this.DGV_Counters.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Counters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Counters.Size = new System.Drawing.Size(788, 248);
+            this.DGV_Counters.Size = new System.Drawing.Size(842, 278);
             this.DGV_Counters.TabIndex = 7;
             // 
             // Tab_Boxes
@@ -583,7 +599,7 @@
             this.Tab_Boxes.Controls.Add(this.DGV_Boxes);
             this.Tab_Boxes.Location = new System.Drawing.Point(4, 22);
             this.Tab_Boxes.Name = "Tab_Boxes";
-            this.Tab_Boxes.Size = new System.Drawing.Size(800, 379);
+            this.Tab_Boxes.Size = new System.Drawing.Size(842, 404);
             this.Tab_Boxes.TabIndex = 4;
             this.Tab_Boxes.Text = "BOXES";
             // 
@@ -684,9 +700,6 @@
             // 
             this.DGV_Boxes.AllowUserToAddRows = false;
             this.DGV_Boxes.AllowUserToDeleteRows = false;
-            this.DGV_Boxes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Boxes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_Boxes.BackgroundColor = System.Drawing.Color.White;
             this.DGV_Boxes.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -701,8 +714,9 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_Boxes.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DGV_Boxes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DGV_Boxes.GridColor = System.Drawing.Color.Black;
-            this.DGV_Boxes.Location = new System.Drawing.Point(6, 123);
+            this.DGV_Boxes.Location = new System.Drawing.Point(0, 125);
             this.DGV_Boxes.MultiSelect = false;
             this.DGV_Boxes.Name = "DGV_Boxes";
             this.DGV_Boxes.ReadOnly = true;
@@ -718,26 +732,257 @@
             this.DGV_Boxes.RowHeadersVisible = false;
             this.DGV_Boxes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Boxes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Boxes.Size = new System.Drawing.Size(788, 248);
+            this.DGV_Boxes.Size = new System.Drawing.Size(842, 279);
             this.DGV_Boxes.TabIndex = 14;
             // 
             // Tab_Invoices
             // 
+            this.Tab_Invoices.BackColor = System.Drawing.Color.White;
+            this.Tab_Invoices.Controls.Add(this.dataGridView1);
+            this.Tab_Invoices.Controls.Add(this.materialLabel8);
+            this.Tab_Invoices.Controls.Add(this.materialSingleLineTextField3);
+            this.Tab_Invoices.Controls.Add(this.materialLabel7);
+            this.Tab_Invoices.Controls.Add(this.materialSingleLineTextField2);
+            this.Tab_Invoices.Controls.Add(this.metroDateTime1);
+            this.Tab_Invoices.Controls.Add(this.materialLabel6);
+            this.Tab_Invoices.Controls.Add(this.materialLabel5);
+            this.Tab_Invoices.Controls.Add(this.materialSingleLineTextField1);
+            this.Tab_Invoices.Controls.Add(this.materialLabel4);
+            this.Tab_Invoices.Controls.Add(this.label4);
+            this.Tab_Invoices.Controls.Add(this.label6);
+            this.Tab_Invoices.Controls.Add(this.label1);
+            this.Tab_Invoices.Controls.Add(this.label2);
             this.Tab_Invoices.Location = new System.Drawing.Point(4, 22);
             this.Tab_Invoices.Name = "Tab_Invoices";
-            this.Tab_Invoices.Size = new System.Drawing.Size(800, 379);
+            this.Tab_Invoices.Size = new System.Drawing.Size(842, 404);
             this.Tab_Invoices.TabIndex = 3;
             this.Tab_Invoices.Text = "INVOICES";
-            this.Tab_Invoices.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 156);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(842, 248);
+            this.dataGridView1.TabIndex = 23;
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel8.Location = new System.Drawing.Point(616, 96);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(66, 19);
+            this.materialLabel8.TabIndex = 22;
+            this.materialLabel8.Text = "Counter:";
+            // 
+            // materialSingleLineTextField3
+            // 
+            this.materialSingleLineTextField3.Depth = 0;
+            this.materialSingleLineTextField3.Hint = "0000";
+            this.materialSingleLineTextField3.Location = new System.Drawing.Point(688, 94);
+            this.materialSingleLineTextField3.MaxLength = 32767;
+            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
+            this.materialSingleLineTextField3.PasswordChar = '\0';
+            this.materialSingleLineTextField3.SelectedText = "";
+            this.materialSingleLineTextField3.SelectionLength = 0;
+            this.materialSingleLineTextField3.SelectionStart = 0;
+            this.materialSingleLineTextField3.Size = new System.Drawing.Size(61, 23);
+            this.materialSingleLineTextField3.TabIndex = 21;
+            this.materialSingleLineTextField3.TabStop = false;
+            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(495, 96);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(38, 19);
+            this.materialLabel7.TabIndex = 20;
+            this.materialLabel7.Text = "Box:";
+            // 
+            // materialSingleLineTextField2
+            // 
+            this.materialSingleLineTextField2.Depth = 0;
+            this.materialSingleLineTextField2.Hint = "0000";
+            this.materialSingleLineTextField2.Location = new System.Drawing.Point(539, 92);
+            this.materialSingleLineTextField2.MaxLength = 32767;
+            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
+            this.materialSingleLineTextField2.PasswordChar = '\0';
+            this.materialSingleLineTextField2.SelectedText = "";
+            this.materialSingleLineTextField2.SelectionLength = 0;
+            this.materialSingleLineTextField2.SelectionStart = 0;
+            this.materialSingleLineTextField2.Size = new System.Drawing.Size(61, 23);
+            this.materialSingleLineTextField2.TabIndex = 19;
+            this.materialSingleLineTextField2.TabStop = false;
+            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.CustomFormat = "MM/yyyy";
+            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.metroDateTime1.Location = new System.Drawing.Point(379, 92);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(92, 29);
+            this.metroDateTime1.TabIndex = 18;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(333, 102);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(40, 19);
+            this.materialLabel6.TabIndex = 17;
+            this.materialLabel6.Text = "Date";
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(6, 98);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(123, 19);
+            this.materialLabel5.TabIndex = 15;
+            this.materialLabel5.Text = "Customer Name:";
+            // 
+            // materialSingleLineTextField1
+            // 
+            this.materialSingleLineTextField1.Depth = 0;
+            this.materialSingleLineTextField1.Hint = "first name last name";
+            this.materialSingleLineTextField1.Location = new System.Drawing.Point(135, 94);
+            this.materialSingleLineTextField1.MaxLength = 32767;
+            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
+            this.materialSingleLineTextField1.PasswordChar = '\0';
+            this.materialSingleLineTextField1.SelectedText = "";
+            this.materialSingleLineTextField1.SelectionLength = 0;
+            this.materialSingleLineTextField1.SelectionStart = 0;
+            this.materialSingleLineTextField1.Size = new System.Drawing.Size(173, 23);
+            this.materialSingleLineTextField1.TabIndex = 14;
+            this.materialSingleLineTextField1.TabStop = false;
+            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(6, 67);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel4.TabIndex = 13;
+            this.materialLabel4.Text = "Search";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(270, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(365, 38);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "<Days Until next month>";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 18F);
+            this.label6.Location = new System.Drawing.Point(270, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(234, 29);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Next Invoice Date in:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(212, 38);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "<Last Month>";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 18F);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 29);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Last Invoice Date:";
             // 
             // Tab_General
             // 
+            this.Tab_General.Controls.Add(this.crystalReportViewer1);
             this.Tab_General.Location = new System.Drawing.Point(4, 22);
             this.Tab_General.Name = "Tab_General";
-            this.Tab_General.Size = new System.Drawing.Size(800, 379);
+            this.Tab_General.Size = new System.Drawing.Size(842, 404);
             this.Tab_General.TabIndex = 5;
             this.Tab_General.Text = "GENERAL";
             this.Tab_General.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(842, 404);
+            this.crystalReportViewer1.TabIndex = 0;
             // 
             // materialDivider1
             // 
@@ -745,10 +990,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(-1, 511);
+            this.materialDivider1.Location = new System.Drawing.Point(-1, 565);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(836, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(901, 1);
             this.materialDivider1.TabIndex = 2;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -759,7 +1004,7 @@
             this.Btn_Help.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Btn_Help.Depth = 0;
             this.Btn_Help.Icon = null;
-            this.Btn_Help.Location = new System.Drawing.Point(765, 518);
+            this.Btn_Help.Location = new System.Drawing.Point(830, 572);
             this.Btn_Help.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Primary = true;
@@ -775,7 +1020,7 @@
             this.Btn_About.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Btn_About.Depth = 0;
             this.Btn_About.Icon = null;
-            this.Btn_About.Location = new System.Drawing.Point(692, 518);
+            this.Btn_About.Location = new System.Drawing.Point(757, 572);
             this.Btn_About.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_About.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_About.Name = "Btn_About";
@@ -790,12 +1035,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(832, 561);
+            this.ClientSize = new System.Drawing.Size(897, 615);
             this.Controls.Add(this.Btn_About);
             this.Controls.Add(this.Btn_Help);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.Tab_Navigator);
             this.Controls.Add(this.materialTabSelector1);
+            this.MinimumSize = new System.Drawing.Size(794, 567);
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
@@ -811,6 +1057,10 @@
             this.Tab_Boxes.ResumeLayout(false);
             this.Tab_Boxes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Boxes)).EndInit();
+            this.Tab_Invoices.ResumeLayout(false);
+            this.Tab_Invoices.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Tab_General.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -862,6 +1112,21 @@
         private MaterialSkin.Controls.MaterialFlatButton Btn_ModBox;
         private MaterialSkin.Controls.MaterialRaisedButton Btn_AddNewBox;
         private System.Windows.Forms.DataGridView DGV_Boxes;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
 

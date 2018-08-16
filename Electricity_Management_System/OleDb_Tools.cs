@@ -30,6 +30,11 @@ namespace Electricity_Management_System
         {
             theCon.Open();
         }
+
+        public static String getDBFile()
+        {
+            return theCon.DataSource;
+        }
         public static void ExecuteQuery(String theQuery)
         {
             theCmd.CommandText = theQuery;

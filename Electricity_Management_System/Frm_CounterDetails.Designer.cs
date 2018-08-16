@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Lbl_CounterID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Lbl_CounterType = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_Exit
@@ -161,12 +163,37 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Counter ID:";
             // 
+            // Lbl_CounterType
+            // 
+            this.Lbl_CounterType.AutoSize = true;
+            this.Lbl_CounterType.BackColor = System.Drawing.Color.Transparent;
+            this.Lbl_CounterType.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_CounterType.Location = new System.Drawing.Point(223, 156);
+            this.Lbl_CounterType.MaximumSize = new System.Drawing.Size(350, 29);
+            this.Lbl_CounterType.Name = "Lbl_CounterType";
+            this.Lbl_CounterType.Size = new System.Drawing.Size(181, 29);
+            this.Lbl_CounterType.TabIndex = 25;
+            this.Lbl_CounterType.Text = "<Type> Ampere";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label5.Location = new System.Drawing.Point(223, 136);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Type:";
+            // 
             // Frm_CounterDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 325);
+            this.ClientSize = new System.Drawing.Size(400, 325);
             this.ControlBox = false;
+            this.Controls.Add(this.Lbl_CounterType);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.Btn_Exit);
             this.Controls.Add(this.Btn_Edit);
             this.Controls.Add(this.Lbl_BoxID);
@@ -200,5 +227,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Lbl_CounterID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_CounterType;
+        private System.Windows.Forms.Label label5;
     }
 }

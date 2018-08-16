@@ -35,11 +35,12 @@ namespace Electricity_Management_System
         void UpdateDetails()
         {
             DataTable dt = new DataTable();
-            dt = ReadQueryOut("SELECT customer_name, customer_phone, floor, counter_id, building_name, street_name, region_name FROM customer c, building b, street s, region r WHERE c.building_id = b.building_id AND b.street_id = s.street_id AND s.region_id = r.region_id AND customer_id = " + CUSTOMER_ID);
+            dt = ReadQueryOut("SELECT customer_name, customer_phone, floor, counter_id, building_name, street_name, region_name, customer_debt FROM customer c, building b, street s, region r WHERE c.building_id = b.building_id AND b.street_id = s.street_id AND s.region_id = r.region_id AND customer_id = " + CUSTOMER_ID);
             Lbl_CustomerID.Text = CUSTOMER_ID.ToString();
             Lbl_CustomerName.Text = dt.Rows[0].ItemArray[0].ToString();
             Lbl_CustomerPhone.Text = dt.Rows[0].ItemArray[1].ToString();
             Lbl_CounterID.Text = dt.Rows[0].ItemArray[3].ToString();
+            Lbl_CustomerDebt.Text = dt.Rows[0].ItemArray[7].ToString() + " L.L.";
             Lbl_Address.Text = "(" + dt.Rows[0].ItemArray[2].ToString() + ")" + " " + dt.Rows[0].ItemArray[4].ToString() + ", " + dt.Rows[0].ItemArray[5].ToString() + ", " + dt.Rows[0].ItemArray[6].ToString();
         }
 

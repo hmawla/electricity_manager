@@ -18,6 +18,7 @@ namespace Electricity_Management_System
         private int CUSTOMER_ID;
         private String CUSTOMER_NAME;
         private String CUSTOMER_PHONE;
+        private int CUSTOMER_DEBT;
         private int FLOOR;
         private int COUNTER_ID;
         private int BUILDING_ID;
@@ -43,10 +44,13 @@ namespace Electricity_Management_System
             FillCBox(CBox_Region, "SELECT region_id, region_name FROM region", "region_id", "region_name");
             FillCBox(CBox_Street, "SELECT street_id, street_name FROM street WHERE region_id = " + CBox_Region.SelectedValue, "street_id", "street_name");
             FillCBox(CBox_Building, "SELECT building_id, building_name FROM building WHERE street_id = " + CBox_Street.SelectedValue, "building_id", "building_name");
+
             CBox_Region.SelectedIndexChanged += new EventHandler(CBox_regions_SelectedIndexChanged);
             CBox_Region.TextChanged += new EventHandler(CBox_Region_TextChanged);
             CBox_Street.SelectedIndexChanged += new EventHandler(CBox_streets_SelectedIndexChanged);
             CBox_Street.TextChanged += new EventHandler(CBox_Street_TextChanged);
+            Txt_CustomerDebt.Click += new EventHandler(Txt_CustomerDebt_Click);
+
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
             Btn_New.Click += new EventHandler(Btn_New_Click);
 
@@ -63,7 +67,7 @@ namespace Electricity_Management_System
             this.CUSTOMER_ID = CUSTOMER_ID;
             Lbl_Customer_ID.Text = "Customer ID: " + CUSTOMER_ID;
             dt = new DataTable();
-            dt = ReadQueryOut("SELECT customer_name, customer_phone, floor, counter_id, building.building_id, street.street_id, region.region_id FROM customer, building, street, region WHERE customer.building_id = building.building_id AND building.street_id = street.street_id AND street.region_id = region.region_id AND customer_id = " + CUSTOMER_ID);
+            dt = ReadQueryOut("SELECT customer_name, customer_phone, floor, counter_id, building.building_id, street.street_id, region.region_id, customer_debt FROM customer, building, street, region WHERE customer.building_id = building.building_id AND building.street_id = street.street_id AND street.region_id = region.region_id AND customer_id = " + CUSTOMER_ID);
             CUSTOMER_NAME = dt.Rows[0].ItemArray[0].ToString();
             CUSTOMER_PHONE = dt.Rows[0].ItemArray[1].ToString();
             FLOOR = int.Parse(dt.Rows[0].ItemArray[2].ToString());
@@ -71,12 +75,14 @@ namespace Electricity_Management_System
             BUILDING_ID = int.Parse(dt.Rows[0].ItemArray[4].ToString());
             STREET_ID = int.Parse(dt.Rows[0].ItemArray[5].ToString());
             REGION_ID = int.Parse(dt.Rows[0].ItemArray[6].ToString());
+            CUSTOMER_DEBT = int.Parse(dt.Rows[0].ItemArray[7].ToString());
 
             Txt_Customer_Name.Text = CUSTOMER_NAME;
             Txt_Customer_Phone.Text = CUSTOMER_PHONE;
             Txt_Customer_Floor.Value = FLOOR;
             Cbox_Counter.SelectedValue = COUNTER_ID;
             CBox_Building.SelectedValue = BUILDING_ID;
+            Txt_CustomerDebt.Value = CUSTOMER_DEBT;
 
             FillCBox(Cbox_Counter, "SELECT [counter_id] FROM [counter]", "counter_id", "counter_id");
             FillCBox(CBox_Region, "SELECT region_id, region_name FROM region", "region_id", "region_name");
@@ -85,14 +91,15 @@ namespace Electricity_Management_System
             CBox_Street.SelectedValue = STREET_ID;
             FillCBox(CBox_Building, "SELECT building_id, building_name FROM building WHERE street_id = " + CBox_Street.SelectedValue, "building_id", "building_name");
             CBox_Building.SelectedValue = BUILDING_ID;
+
             CBox_Region.SelectedIndexChanged += new EventHandler(CBox_regions_SelectedIndexChanged);
             CBox_Region.TextChanged += new EventHandler(CBox_Region_TextChanged);
             CBox_Street.SelectedIndexChanged += new EventHandler(CBox_streets_SelectedIndexChanged);
             CBox_Street.TextChanged += new EventHandler(CBox_Street_TextChanged);
-
-
+            Txt_CustomerDebt.Click += new EventHandler(Txt_CustomerDebt_Click);
 
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
+            Btn_New.Click += new EventHandler(Btn_New_Click);
 
         }
 
@@ -111,8 +118,9 @@ namespace Electricity_Management_System
                         FLOOR = int.Parse(Txt_Customer_Floor.Text);
                         COUNTER_ID = int.Parse(Cbox_Counter.SelectedValue.ToString());
                         BUILDING_ID = AddBuilding(CBox_Region, CBox_Street, CBox_Building);
+                        CUSTOMER_DEBT = int.Parse(Txt_CustomerDebt.Text);
 
-                        ExecuteQuery("INSERT INTO customer VALUES(" + CUSTOMER_ID + ", '" + CUSTOMER_NAME + "', '" + CUSTOMER_PHONE + "', " + FLOOR + ", " + COUNTER_ID + ", " + BUILDING_ID + ")");
+                        ExecuteQuery("INSERT INTO customer VALUES(" + CUSTOMER_ID + ", '" + CUSTOMER_NAME + "', '" + CUSTOMER_PHONE + "', " + CUSTOMER_DEBT + ", " + FLOOR + ", " + COUNTER_ID + ", " + BUILDING_ID + ")");
                         this.Dispose();
                     }
                     
@@ -127,8 +135,9 @@ namespace Electricity_Management_System
                         FLOOR = int.Parse(Txt_Customer_Floor.Text);
                         COUNTER_ID = int.Parse(Cbox_Counter.SelectedValue.ToString());
                         BUILDING_ID = AddBuilding(CBox_Region, CBox_Street, CBox_Building);
+                        CUSTOMER_DEBT = int.Parse(Txt_CustomerDebt.Text);
 
-                        ExecuteQuery("UPDATE customer SET customer_name = '" + CUSTOMER_NAME + "', customer_phone = '" + CUSTOMER_PHONE + "', floor = " + FLOOR + ", counter_id = " + COUNTER_ID + ", building_id = " + BUILDING_ID + " WHERE customer_id = " + CUSTOMER_ID);
+                        ExecuteQuery("UPDATE customer SET customer_name = '" + CUSTOMER_NAME + "', customer_phone = '" + CUSTOMER_PHONE + "', customer_debt = " + CUSTOMER_DEBT + ", floor = " + FLOOR + ", counter_id = " + COUNTER_ID + ", building_id = " + BUILDING_ID + " WHERE customer_id = " + CUSTOMER_ID);
                         this.Dispose();
                     }
                 }
@@ -188,6 +197,19 @@ namespace Electricity_Management_System
             FillCBox(Cbox_Counter, "SELECT [counter_id] FROM [counter]", "counter_id", "counter_id");
             Cbox_Counter.SelectedValue = NEW_COUNTER_ID;
 
+        }
+
+        void Txt_CustomerDebt_Click(object sender, EventArgs e)
+        {
+            if (Txt_CustomerDebt.ReadOnly)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to customize the Customer's debt value?", "Warning!", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Txt_CustomerDebt.ReadOnly = false;
+                }
+            }
+            
         }
     }
 }

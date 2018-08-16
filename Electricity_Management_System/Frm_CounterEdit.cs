@@ -17,6 +17,7 @@ namespace Electricity_Management_System
         private int COUNTER_ID;
         private float TOTAL_USAGE;
         private int MONTHLY_COST;
+        private int COUNTER_TYPE;
         private int BOX_ID;
         private Boolean OutSide = false;
         private Boolean Editing;
@@ -56,14 +57,16 @@ namespace Electricity_Management_System
             FillCBox(Cbox_Box, "SELECT box_id, box_name FROM box", "box_id", "box_id");
 
             DataTable dt = new DataTable();
-            dt = ReadQueryOut("SELECT total_usage, monthly_cost, box_id FROM [counter] WHERE counter_id = " + COUNTER_ID);
+            dt = ReadQueryOut("SELECT total_usage, monthly_cost, box_id, ampere_value FROM [counter] WHERE counter_id = " + COUNTER_ID);
             TOTAL_USAGE = float.Parse(dt.Rows[0].ItemArray[0].ToString());
             MONTHLY_COST = int.Parse(dt.Rows[0].ItemArray[1].ToString());
             BOX_ID = int.Parse(dt.Rows[0].ItemArray[2].ToString());
+            COUNTER_TYPE = int.Parse(dt.Rows[0].ItemArray[3].ToString());
 
             Txt_InitialUsage.Value = (Decimal)TOTAL_USAGE;
             Txt_MonthlyCost.Value = MONTHLY_COST;
             Cbox_Box.SelectedValue = BOX_ID;
+            Txt_CounterType.Value = COUNTER_TYPE;
 
             Txt_InitialUsage.Click += new EventHandler(Txt_InitialUsage_Click);
             Btn_Submit.Click += new EventHandler(Btn_Submit_Click);
@@ -89,11 +92,15 @@ namespace Electricity_Management_System
 
         void Txt_InitialUsage_Click(object sender, EventArgs args)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want a custom usage value?" + Environment.NewLine + "This may cause problems!", "Warning!", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (Txt_InitialUsage.ReadOnly)
             {
-                Txt_InitialUsage.ReadOnly = false;
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want a custom usage value?" + Environment.NewLine + "This may cause problems!", "Warning!", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Txt_InitialUsage.ReadOnly = false;
+                }
             }
+            
         }
 
         void Btn_Submit_Click(object sender, EventArgs e)
@@ -107,8 +114,9 @@ namespace Electricity_Management_System
                     {
                         TOTAL_USAGE = (float)Txt_InitialUsage.Value;
                         MONTHLY_COST = (int)Txt_MonthlyCost.Value;
+                        COUNTER_TYPE = (int)Txt_CounterType.Value;
                         BOX_ID = (int)Cbox_Box.SelectedValue;
-                        ExecuteQuery("UPDATE [counter] SET total_usage =  " + TOTAL_USAGE + ", monthly_cost = " + MONTHLY_COST + ", box_id =  " + BOX_ID + " WHERE counter_id = " + COUNTER_ID);
+                        ExecuteQuery("UPDATE [counter] SET ampere_value = " + COUNTER_TYPE + ", total_usage =  " + TOTAL_USAGE + ", monthly_cost = " + MONTHLY_COST + ", box_id =  " + BOX_ID + " WHERE counter_id = " + COUNTER_ID);
                         if (!OutSide)
                         {
                             this.Dispose();
@@ -127,8 +135,9 @@ namespace Electricity_Management_System
                     {
                         TOTAL_USAGE = (float)Txt_InitialUsage.Value;
                         MONTHLY_COST = (int)Txt_MonthlyCost.Value;
+                        COUNTER_TYPE = (int)Txt_CounterType.Value;
                         BOX_ID = (int)Cbox_Box.SelectedValue;
-                        ExecuteQuery("INSERT INTO [counter] VALUES(" + COUNTER_ID + ", " + TOTAL_USAGE + ", " + MONTHLY_COST + ", " + BOX_ID + ")");
+                        ExecuteQuery("INSERT INTO [counter] VALUES(" + COUNTER_ID + ", " + COUNTER_TYPE + ", " + TOTAL_USAGE + ", " + MONTHLY_COST + ", " + BOX_ID + ")");
                         if (!OutSide)
                         {
                             this.Dispose();

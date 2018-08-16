@@ -37,8 +37,11 @@
             this.Btn_Submit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Txt_InitialUsage = new System.Windows.Forms.NumericUpDown();
             this.Txt_MonthlyCost = new System.Windows.Forms.NumericUpDown();
+            this.Txt_CounterType = new System.Windows.Forms.NumericUpDown();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_InitialUsage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_MonthlyCost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txt_CounterType)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_New
@@ -53,7 +56,7 @@
             this.Btn_New.Name = "Btn_New";
             this.Btn_New.Primary = true;
             this.Btn_New.Size = new System.Drawing.Size(51, 36);
-            this.Btn_New.TabIndex = 33;
+            this.Btn_New.TabIndex = 1;
             this.Btn_New.Text = "New";
             this.Btn_New.UseVisualStyleBackColor = true;
             // 
@@ -78,7 +81,7 @@
             this.Cbox_Box.Location = new System.Drawing.Point(12, 132);
             this.Cbox_Box.Name = "Cbox_Box";
             this.Cbox_Box.Size = new System.Drawing.Size(133, 27);
-            this.Cbox_Box.TabIndex = 31;
+            this.Cbox_Box.TabIndex = 0;
             // 
             // Lbl_Customer_Phone
             // 
@@ -86,7 +89,7 @@
             this.Lbl_Customer_Phone.Depth = 0;
             this.Lbl_Customer_Phone.Font = new System.Drawing.Font("Roboto", 11F);
             this.Lbl_Customer_Phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Lbl_Customer_Phone.Location = new System.Drawing.Point(146, 169);
+            this.Lbl_Customer_Phone.Location = new System.Drawing.Point(12, 219);
             this.Lbl_Customer_Phone.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Customer_Phone.Name = "Lbl_Customer_Phone";
             this.Lbl_Customer_Phone.Size = new System.Drawing.Size(137, 19);
@@ -125,12 +128,12 @@
             this.Btn_Submit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Btn_Submit.Depth = 0;
             this.Btn_Submit.Icon = null;
-            this.Btn_Submit.Location = new System.Drawing.Point(203, 222);
+            this.Btn_Submit.Location = new System.Drawing.Point(203, 235);
             this.Btn_Submit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Submit.Name = "Btn_Submit";
             this.Btn_Submit.Primary = true;
             this.Btn_Submit.Size = new System.Drawing.Size(71, 36);
-            this.Btn_Submit.TabIndex = 22;
+            this.Btn_Submit.TabIndex = 5;
             this.Btn_Submit.Text = "Submit";
             this.Btn_Submit.UseVisualStyleBackColor = true;
             // 
@@ -147,12 +150,17 @@
             this.Txt_InitialUsage.Name = "Txt_InitialUsage";
             this.Txt_InitialUsage.ReadOnly = true;
             this.Txt_InitialUsage.Size = new System.Drawing.Size(128, 25);
-            this.Txt_InitialUsage.TabIndex = 34;
+            this.Txt_InitialUsage.TabIndex = 2;
             // 
             // Txt_MonthlyCost
             // 
             this.Txt_MonthlyCost.Font = new System.Drawing.Font("Roboto", 11F);
-            this.Txt_MonthlyCost.Location = new System.Drawing.Point(146, 191);
+            this.Txt_MonthlyCost.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.Txt_MonthlyCost.Location = new System.Drawing.Point(12, 241);
             this.Txt_MonthlyCost.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -160,13 +168,36 @@
             0});
             this.Txt_MonthlyCost.Name = "Txt_MonthlyCost";
             this.Txt_MonthlyCost.Size = new System.Drawing.Size(128, 25);
-            this.Txt_MonthlyCost.TabIndex = 35;
+            this.Txt_MonthlyCost.TabIndex = 4;
+            // 
+            // Txt_CounterType
+            // 
+            this.Txt_CounterType.Font = new System.Drawing.Font("Roboto", 11F);
+            this.Txt_CounterType.Location = new System.Drawing.Point(146, 191);
+            this.Txt_CounterType.Name = "Txt_CounterType";
+            this.Txt_CounterType.Size = new System.Drawing.Size(128, 25);
+            this.Txt_CounterType.TabIndex = 3;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(146, 169);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(111, 19);
+            this.materialLabel1.TabIndex = 36;
+            this.materialLabel1.Text = "Type (Ampere):";
             // 
             // Frm_CounterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 272);
+            this.ClientSize = new System.Drawing.Size(288, 286);
+            this.Controls.Add(this.Txt_CounterType);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.Txt_MonthlyCost);
             this.Controls.Add(this.Txt_InitialUsage);
             this.Controls.Add(this.Btn_New);
@@ -184,6 +215,7 @@
             this.Text = "Counter";
             ((System.ComponentModel.ISupportInitialize)(this.Txt_InitialUsage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Txt_MonthlyCost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txt_CounterType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +232,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton Btn_Submit;
         private System.Windows.Forms.NumericUpDown Txt_InitialUsage;
         private System.Windows.Forms.NumericUpDown Txt_MonthlyCost;
+        private System.Windows.Forms.NumericUpDown Txt_CounterType;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
