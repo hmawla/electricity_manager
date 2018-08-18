@@ -35,13 +35,15 @@ namespace Electricity_Management_System
         void UpdateDetails()
         {
             DataTable dt = new DataTable();
-            dt = ReadQueryOut("SELECT customer_name, customer_phone, floor, counter_id, building_name, street_name, region_name, customer_debt FROM customer c, building b, street s, region r WHERE c.building_id = b.building_id AND b.street_id = s.street_id AND s.region_id = r.region_id AND customer_id = " + CUSTOMER_ID);
+            dt = ReadQueryOut("SELECT customer_name, customer_phone, floor, building_name, street_name, region_name, total_usage, monthly_cost, ampere_value, box.box_id FROM customer, building, street, region, box WHERE box.box_id = customer.box_id AND customer.building_id = building.building_id AND building.street_id = street.street_id AND street.region_id = region.region_id AND customer_id = " + CUSTOMER_ID);
             Lbl_CustomerID.Text = CUSTOMER_ID.ToString();
             Lbl_CustomerName.Text = dt.Rows[0].ItemArray[0].ToString();
             Lbl_CustomerPhone.Text = dt.Rows[0].ItemArray[1].ToString();
-            Lbl_CounterID.Text = dt.Rows[0].ItemArray[3].ToString();
-            Lbl_CustomerDebt.Text = dt.Rows[0].ItemArray[7].ToString() + " L.L.";
-            Lbl_Address.Text = "(" + dt.Rows[0].ItemArray[2].ToString() + ")" + " " + dt.Rows[0].ItemArray[4].ToString() + ", " + dt.Rows[0].ItemArray[5].ToString() + ", " + dt.Rows[0].ItemArray[6].ToString();
+            Lbl_TotalUsage.Text = dt.Rows[0].ItemArray[6].ToString() + " WATT";
+            Lbl_MonthlyCost.Text = dt.Rows[0].ItemArray[7].ToString() + " L.L.";
+            Lbl_CounterType.Text = dt.Rows[0].ItemArray[8].ToString() + " Ampere";
+            Lbl_BoxID.Text = dt.Rows[0].ItemArray[9].ToString();
+            Lbl_Address.Text = "(" + dt.Rows[0].ItemArray[2].ToString() + ")" + " " + dt.Rows[0].ItemArray[3].ToString() + ", " + dt.Rows[0].ItemArray[4].ToString() + ", " + dt.Rows[0].ItemArray[5].ToString();
         }
 
         void Btn_Exit_Click(object sender, EventArgs e)

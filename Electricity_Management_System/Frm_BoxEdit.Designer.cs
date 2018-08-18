@@ -47,9 +47,9 @@
             this.Lbl_Box_Name.Location = new System.Drawing.Point(12, 115);
             this.Lbl_Box_Name.MouseState = MaterialSkin.MouseState.HOVER;
             this.Lbl_Box_Name.Name = "Lbl_Box_Name";
-            this.Lbl_Box_Name.Size = new System.Drawing.Size(82, 19);
+            this.Lbl_Box_Name.Size = new System.Drawing.Size(45, 19);
             this.Lbl_Box_Name.TabIndex = 25;
-            this.Lbl_Box_Name.Text = "Box Name:";
+            this.Lbl_Box_Name.Text = "Near:";
             // 
             // Lbl_Box_ID
             // 

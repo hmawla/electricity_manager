@@ -100,18 +100,6 @@
     <Compile Include="Frm_BoxEdit.Designer.cs">
       <DependentUpon>Frm_BoxEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_CounterDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_CounterDetails.Designer.cs">
-      <DependentUpon>Frm_CounterDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_CounterEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_CounterEdit.Designer.cs">
-      <DependentUpon>Frm_CounterEdit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_CustomerDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,12 +137,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_BoxEdit.resx">
       <DependentUpon>Frm_BoxEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_CounterDetails.resx">
-      <DependentUpon>Frm_CounterDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_CounterEdit.resx">
-      <DependentUpon>Frm_CounterEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_CustomerDetails.resx">
       <DependentUpon>Frm_CustomerDetails.cs</DependentUpon>
