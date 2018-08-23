@@ -281,11 +281,10 @@
             // 
             // Txt_InitialUsage
             // 
-            this.Txt_InitialUsage.DecimalPlaces = 1;
             this.Txt_InitialUsage.Font = new System.Drawing.Font("Roboto", 11F);
             this.Txt_InitialUsage.Location = new System.Drawing.Point(366, 175);
             this.Txt_InitialUsage.Maximum = new decimal(new int[] {
-            500,
+            99999,
             0,
             0,
             0});
@@ -316,9 +315,9 @@
             this.materialLabel6.Location = new System.Drawing.Point(362, 155);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(100, 19);
+            this.materialLabel6.Size = new System.Drawing.Size(109, 19);
             this.materialLabel6.TabIndex = 40;
-            this.materialLabel6.Text = "Usage (Watt):";
+            this.materialLabel6.Text = "Usage (KWatt):";
             // 
             // materialDivider1
             // 

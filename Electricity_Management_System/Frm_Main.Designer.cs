@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.Btn_Help = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Btn_About = new MaterialSkin.Controls.MaterialFlatButton();
@@ -47,15 +49,13 @@
             this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.DTP_InvoiceSearch = new MetroFramework.Controls.MetroDateTime();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Lbl_NextInvoiceDays = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Tab_Boxes = new System.Windows.Forms.TabPage();
             this.Btn_ResetBoxes = new MaterialSkin.Controls.MaterialFlatButton();
             this.Btn_DeleteBox = new MaterialSkin.Controls.MaterialFlatButton();
@@ -85,6 +85,7 @@
             this.lable1 = new System.Windows.Forms.Label();
             this.Tab_Navigator = new MaterialSkin.Controls.MaterialTabControl();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.theNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.Tab_General.SuspendLayout();
             this.Tab_Invoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Invoices)).BeginInit();
@@ -173,15 +174,13 @@
             this.Tab_Invoices.Controls.Add(this.materialSingleLineTextField3);
             this.Tab_Invoices.Controls.Add(this.materialLabel7);
             this.Tab_Invoices.Controls.Add(this.materialSingleLineTextField2);
-            this.Tab_Invoices.Controls.Add(this.metroDateTime1);
+            this.Tab_Invoices.Controls.Add(this.DTP_InvoiceSearch);
             this.Tab_Invoices.Controls.Add(this.materialLabel6);
             this.Tab_Invoices.Controls.Add(this.materialLabel5);
             this.Tab_Invoices.Controls.Add(this.materialSingleLineTextField1);
             this.Tab_Invoices.Controls.Add(this.materialLabel4);
-            this.Tab_Invoices.Controls.Add(this.label4);
+            this.Tab_Invoices.Controls.Add(this.Lbl_NextInvoiceDays);
             this.Tab_Invoices.Controls.Add(this.label6);
-            this.Tab_Invoices.Controls.Add(this.label1);
-            this.Tab_Invoices.Controls.Add(this.label2);
             this.Tab_Invoices.Location = new System.Drawing.Point(4, 22);
             this.Tab_Invoices.Name = "Tab_Invoices";
             this.Tab_Invoices.Size = new System.Drawing.Size(832, 416);
@@ -261,7 +260,7 @@
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel8.Location = new System.Drawing.Point(616, 98);
+            this.materialLabel8.Location = new System.Drawing.Point(435, 98);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
             this.materialLabel8.Size = new System.Drawing.Size(66, 19);
@@ -272,7 +271,7 @@
             // 
             this.materialSingleLineTextField3.Depth = 0;
             this.materialSingleLineTextField3.Hint = "0000";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(688, 94);
+            this.materialSingleLineTextField3.Location = new System.Drawing.Point(507, 94);
             this.materialSingleLineTextField3.MaxLength = 32767;
             this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
@@ -291,7 +290,7 @@
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(495, 98);
+            this.materialLabel7.Location = new System.Drawing.Point(314, 98);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(38, 19);
@@ -302,7 +301,7 @@
             // 
             this.materialSingleLineTextField2.Depth = 0;
             this.materialSingleLineTextField2.Hint = "0000";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(539, 92);
+            this.materialSingleLineTextField2.Location = new System.Drawing.Point(358, 92);
             this.materialSingleLineTextField2.MaxLength = 32767;
             this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
@@ -315,23 +314,25 @@
             this.materialSingleLineTextField2.TabStop = false;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             // 
-            // metroDateTime1
+            // DTP_InvoiceSearch
             // 
-            this.metroDateTime1.CustomFormat = "MM/yyyy";
-            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.metroDateTime1.Location = new System.Drawing.Point(379, 92);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(92, 29);
-            this.metroDateTime1.TabIndex = 18;
+            this.DTP_InvoiceSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DTP_InvoiceSearch.CustomFormat = "MM/yyyy";
+            this.DTP_InvoiceSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTP_InvoiceSearch.Location = new System.Drawing.Point(737, 140);
+            this.DTP_InvoiceSearch.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DTP_InvoiceSearch.Name = "DTP_InvoiceSearch";
+            this.DTP_InvoiceSearch.Size = new System.Drawing.Size(92, 29);
+            this.DTP_InvoiceSearch.TabIndex = 18;
             // 
             // materialLabel6
             // 
+            this.materialLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(333, 98);
+            this.materialLabel6.Location = new System.Drawing.Point(691, 146);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(40, 19);
@@ -381,45 +382,25 @@
             this.materialLabel4.TabIndex = 13;
             this.materialLabel4.Text = "Search";
             // 
-            // label4
+            // Lbl_NextInvoiceDays
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(273, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(365, 38);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "<Days Until next month>";
+            this.Lbl_NextInvoiceDays.AutoSize = true;
+            this.Lbl_NextInvoiceDays.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_NextInvoiceDays.Location = new System.Drawing.Point(8, 31);
+            this.Lbl_NextInvoiceDays.Name = "Lbl_NextInvoiceDays";
+            this.Lbl_NextInvoiceDays.Size = new System.Drawing.Size(365, 38);
+            this.Lbl_NextInvoiceDays.TabIndex = 12;
+            this.Lbl_NextInvoiceDays.Text = "<Days Until next month>";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 18F);
-            this.label6.Location = new System.Drawing.Point(273, -2);
+            this.label6.Location = new System.Drawing.Point(8, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(234, 29);
+            this.label6.Size = new System.Drawing.Size(261, 29);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Next Invoice Date in:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 38);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "<Last Month>";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 18F);
-            this.label2.Location = new System.Drawing.Point(6, -2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 29);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Last Invoice Date:";
+            this.label6.Text = "Next invoice release in:";
             // 
             // Tab_Boxes
             // 
@@ -822,9 +803,9 @@
             this.label3.Font = new System.Drawing.Font("Roboto", 18F);
             this.label3.Location = new System.Drawing.Point(6, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(257, 29);
+            this.label3.Size = new System.Drawing.Size(272, 29);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Current Price Per Watt:";
+            this.label3.Text = "Current Price Per KWatt:";
             // 
             // Lbl_info_NewestCustomer
             // 
@@ -879,6 +860,10 @@
             this.materialTabSelector1.TabIndex = 5;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // theNotifyIcon
+            // 
+            this.theNotifyIcon.Visible = true;
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -890,6 +875,7 @@
             this.Controls.Add(this.Btn_Help);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.Tab_Navigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(794, 567);
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -952,18 +938,17 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroDateTime DTP_InvoiceSearch;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Lbl_NextInvoiceDays;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage Tab_General;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private System.Windows.Forms.NotifyIcon theNotifyIcon;
     }
 }
 

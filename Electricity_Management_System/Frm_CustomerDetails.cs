@@ -39,7 +39,7 @@ namespace Electricity_Management_System
             Lbl_CustomerID.Text = CUSTOMER_ID.ToString();
             Lbl_CustomerName.Text = dt.Rows[0].ItemArray[0].ToString();
             Lbl_CustomerPhone.Text = dt.Rows[0].ItemArray[1].ToString();
-            Lbl_TotalUsage.Text = dt.Rows[0].ItemArray[6].ToString() + " WATT";
+            Lbl_TotalUsage.Text = dt.Rows[0].ItemArray[6].ToString() + " KWATT";
             Lbl_MonthlyCost.Text = dt.Rows[0].ItemArray[7].ToString() + " L.L.";
             Lbl_CounterType.Text = dt.Rows[0].ItemArray[8].ToString() + " Ampere";
             Lbl_BoxID.Text = dt.Rows[0].ItemArray[9].ToString();

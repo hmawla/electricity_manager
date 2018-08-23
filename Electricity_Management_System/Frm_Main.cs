@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static Electricity_Management_System.OleDb_Tools;
-using Microsoft.Reporting.WinForms;
 
 namespace Electricity_Management_System
 {
@@ -21,6 +20,7 @@ namespace Electricity_Management_System
         private int info_NumberOfCustomers;
         private String info_NewestCustomer;
         private double info_ApproximateIncome;
+        private Boolean ShowingUnreleased = false;
         CRpt_InvoiceCustomer rpt;
 
 
@@ -55,11 +55,31 @@ namespace Electricity_Management_System
             Btn_Help.Click += new EventHandler(Btn_Help_Click);
             Btn_About.Click += new EventHandler(Btn_About_Click);
 
+            //Invoices Events
+            Btn_ShowUnreleased.Click += new EventHandler(Btn_ShowUnreleased_Click);
+
             //Theme Manager
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
+
+            //Check for unreleased invoices and send notification about it
+            int NumberOfUnreleasedInvoices = getUnreleasedCount();
+            if (NumberOfUnreleasedInvoices > 0)
+            {
+                theNotifyIcon.BalloonTipClicked += new EventHandler(theNotifyIcon_BalloonTipClicked_Click);
+                theNotifyIcon.BalloonTipText = "You have " + NumberOfUnreleasedInvoices + " unreleased invoice(s)";
+                theNotifyIcon.BalloonTipTitle = "Elect Manager";
+                theNotifyIcon.Visible = true;
+                theNotifyIcon.Icon = this.Icon;
+                theNotifyIcon.ShowBalloonTip(500);
+            }
+        }
+
+        void theNotifyIcon_BalloonTipClicked_Click(object sender, EventArgs e)
+        {
+            Tab_Navigator.SelectedIndex = 3;
         }
 
         void Btn_Help_Click(object sender, EventArgs e)
@@ -136,35 +156,92 @@ namespace Electricity_Management_System
             }
             else if (Tab_Navigator.SelectedIndex == 3)
             {
-                int NumberOfUnreleasedInvoices;
-                DataTable dt = ReadQueryOut("SELECT COUNT(*) FROM customer WHERE customer_id NOT IN (SELECT customer_id FROM invoice WHERE invoice_date LIKE '%" + DateTime.Now.ToString("MM/yyyy") + "')");
-                NumberOfUnreleasedInvoices = int.Parse(dt.Rows[0].ItemArray[0].ToString());
-                dt.Reset();
-                
+                UpdateInvoices();
+                int NumberOfUnreleasedInvoices = getUnreleasedCount();
                 if (NumberOfUnreleasedInvoices > 0)
                 {
                     Lbl_NoOfUnreleased.Text = "You have " + NumberOfUnreleasedInvoices + " unreleased invoice(s)";
                     Lbl_NoOfUnreleased.ForeColor = Color.Red;
-                    ShowUnreleased();
                 }
                 else
                 {
                     Lbl_NoOfUnreleased.Text = "All this month's invoices are released!";
                     Lbl_NoOfUnreleased.ForeColor = Color.Green;
                 }
+                DateTime NextMonth = DateTime.Now;
+                int dayNumber = int.Parse(DateTime.Now.ToString("dd"));
+                int NumberOfDaysInTheCurrentMonth = DateTime.DaysInMonth(int.Parse(DateTime.Now.ToString("yyyy")), int.Parse(DateTime.Now.ToString("MM")));
+                int NumberOfDaysTillNextMonth = NumberOfDaysInTheCurrentMonth - dayNumber;
+
+                if (NumberOfDaysTillNextMonth > 1)
+                {
+                    Lbl_NextInvoiceDays.Text = NumberOfDaysTillNextMonth + " Days";
+                }
+                else
+                {
+                    Lbl_NextInvoiceDays.Text = NumberOfDaysTillNextMonth + " Day";
+                }
+                
+
             }
             else if (Tab_Navigator.SelectedIndex == 4)
             {
-                DataTable dt = ReadQueryOut("SELECT customer_id, customer_name FROM customer WHERE customer_id = (SELECT MAX(customer_id) FROM customer)");
+                DataTable dt = ReadQueryOut("SELECT customer_id, customer_name " +
+                    "FROM customer WHERE customer_id = (SELECT MAX(customer_id) FROM customer)");
                 rpt.Database.Tables[0].SetDataSource(dt);
                 crystalReportViewer1.ReportSource = rpt;
                 crystalReportViewer1.RefreshReport();
             }
         }
 
+        int getUnreleasedCount()
+        {
+            int NumberOfUnreleasedInvoices;
+            DataTable dt = ReadQueryOut("SELECT COUNT(*) " +
+                "FROM customer WHERE date() >= dateserial(Year(added_date), Month(added_date) + 1, 1) " +
+                "AND customer_id NOT IN (SELECT customer_id FROM invoice WHERE " +
+                "invoice_date LIKE '%" + DateTime.Now.ToString("MM/yyyy") + "')");
+            NumberOfUnreleasedInvoices = int.Parse(dt.Rows[0].ItemArray[0].ToString());
+            dt.Reset();
+            return NumberOfUnreleasedInvoices;
+        }
+
+        void UpdateInvoices()
+        {
+            DTP_InvoiceSearch.Value = DateTime.Now;
+            UpdateInvoices(DTP_InvoiceSearch.Value);
+        }
+        void UpdateInvoices(DateTime theDate)
+        {
+            FillDGV(DGV_Invoices, "SELECT invoice_id AS [Invoice#], box_id AS [Box#], c.customer_id AS [ID], customer_name AS [Name], current_usage AS [Usage in KWATT] FROM customer c, invoice i WHERE c.customer_id = i.customer_id");
+        }
+
+        void Btn_ShowUnreleased_Click(object sender, EventArgs e)
+        {
+            if (!ShowingUnreleased)
+            {
+                ShowUnreleased();
+                Btn_ShowUnreleased.Text = "Reset";
+            }
+            else
+            {
+                UpdateInvoices(DTP_InvoiceSearch.Value);
+                Btn_ShowUnreleased.Text = "Show";
+            }
+            ShowingUnreleased = !ShowingUnreleased;
+
+
+        }
+
         void ShowUnreleased()
         {
-            FillDGV(DGV_Invoices, "SELECT box.box_id AS [Box], customer.customer_id AS [Customer ID], customer_name AS [Customer], total_usage AS [Last Usage in WATT] FROM customer, box WHERE customer.box_id = box.box_id AND customer.customer_id NOT IN (SELECT customer_id FROM invoice WHERE invoice_date LIKE '%" + DateTime.Now.ToString("MM/yyyy") + "')");
+            FillDGV(DGV_Invoices, "SELECT box.box_id AS [Box]," +
+                " customer.customer_id AS [Customer ID]," +
+                " customer_name AS [Customer]," +
+                " total_usage AS [Last Usage in KWATT] FROM customer," +
+                " box WHERE customer.box_id = box.box_id AND customer.customer_id " +
+                "NOT IN (SELECT customer_id FROM invoice WHERE " +
+                "invoice_date LIKE '%" + DateTime.Now.ToString("MM/yyyy") + "')");
         }
 
         void Btn_AddNewCustomer_Click(object sender, EventArgs e)
@@ -184,13 +261,13 @@ namespace Electricity_Management_System
         void UpdateCustomers()
         {
             Txt_FindCustomerByName.Text = "";
-            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], total_usage AS [Total Usage in WATT], box_id AS [Box], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
+            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], total_usage AS [Total Usage in KWATT], box_id AS [Box], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id");
         }
         
 
         void UpdateCustomers(String CUSTOMER_NAME)
         {
-            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], customer_phone AS [Phone], counter_id AS [Counter], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id AND customer_name LIKE '%" + CUSTOMER_NAME + "%'");
+            FillDGV(DGV_Customers, "SELECT customer_id AS [ID], customer_name AS [Name], total_usage AS [Total Usage in KWATT], box_id AS [Box], building_name & ', ' & street_name AS [Address] FROM customer, building, street WHERE customer.building_id = building.building_id AND building.street_id = street.street_id AND customer_name LIKE '%" + CUSTOMER_NAME + "%'");
         }
 
         void UpdateBoxes()

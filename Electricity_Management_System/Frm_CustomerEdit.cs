@@ -133,7 +133,7 @@ namespace Electricity_Management_System
                         BOX_ID = (int)Cbox_Box.SelectedValue;
                         BUILDING_ID = AddBuilding(CBox_Region, CBox_Street, CBox_Building);
 
-                        ExecuteQuery("INSERT INTO customer VALUES(" + CUSTOMER_ID + ", '" + CUSTOMER_NAME + "', '" + CUSTOMER_PHONE + "', " + FLOOR + ", " + TOTAL_USAGE + ", " + MONTHLY_COST + ", " + COUNTER_TYPE + ", " + BUILDING_ID + ", " + BOX_ID + ")");
+                        ExecuteQuery("INSERT INTO customer VALUES(" + CUSTOMER_ID + ", '" + CUSTOMER_NAME + "', '" + CUSTOMER_PHONE + "', " + FLOOR + ", " + TOTAL_USAGE + ", " + MONTHLY_COST + ", " + COUNTER_TYPE + ", date(), " + BUILDING_ID + ", " + BOX_ID + ")");
                         this.Dispose();
                     }
                     

@@ -46,6 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Lbl_TotalUsage = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.Btn_Print = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // label1
@@ -164,7 +165,7 @@
             this.Btn_Exit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Exit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Exit.Name = "Btn_Exit";
-            this.Btn_Exit.Primary = true;
+            this.Btn_Exit.Primary = false;
             this.Btn_Exit.Size = new System.Drawing.Size(63, 36);
             this.Btn_Exit.TabIndex = 11;
             this.Btn_Exit.Text = "Close";
@@ -198,7 +199,7 @@
             this.Lbl_BoxID.AutoSize = true;
             this.Lbl_BoxID.BackColor = System.Drawing.Color.Transparent;
             this.Lbl_BoxID.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_BoxID.Location = new System.Drawing.Point(15, 321);
+            this.Lbl_BoxID.Location = new System.Drawing.Point(15, 331);
             this.Lbl_BoxID.Name = "Lbl_BoxID";
             this.Lbl_BoxID.Size = new System.Drawing.Size(60, 29);
             this.Lbl_BoxID.TabIndex = 31;
@@ -209,7 +210,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label6.Location = new System.Drawing.Point(15, 301);
+            this.label6.Location = new System.Drawing.Point(15, 311);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 20);
             this.label6.TabIndex = 30;
@@ -260,12 +261,30 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Total Usage:";
             // 
+            // Btn_Print
+            // 
+            this.Btn_Print.AutoSize = true;
+            this.Btn_Print.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_Print.BackColor = System.Drawing.Color.White;
+            this.Btn_Print.Depth = 0;
+            this.Btn_Print.Icon = null;
+            this.Btn_Print.Location = new System.Drawing.Point(409, 334);
+            this.Btn_Print.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_Print.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_Print.Name = "Btn_Print";
+            this.Btn_Print.Primary = true;
+            this.Btn_Print.Size = new System.Drawing.Size(60, 36);
+            this.Btn_Print.TabIndex = 34;
+            this.Btn_Print.Text = "Print";
+            this.Btn_Print.UseVisualStyleBackColor = false;
+            // 
             // Frm_CustomerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 385);
             this.ControlBox = false;
+            this.Controls.Add(this.Btn_Print);
             this.Controls.Add(this.Lbl_CounterType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Lbl_BoxID);
@@ -313,5 +332,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Lbl_TotalUsage;
         private System.Windows.Forms.Label label8;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_Print;
     }
 }
