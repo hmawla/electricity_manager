@@ -36,6 +36,7 @@ namespace Electricity_Management_System
             
             //DataGridViews
             DGV_Customers.Click += new EventHandler(DGV_Customers_Click);
+            DGV_Invoices.Click += new EventHandler(DGV_Invoices_Click);
 
             //Filter Text Boxes
             Txt_FindCustomerByName.TextChanged += new EventHandler(Txt_FindCustomerByName_TextChanged);
@@ -157,16 +158,20 @@ namespace Electricity_Management_System
             else if (Tab_Navigator.SelectedIndex == 3)
             {
                 UpdateInvoices();
+                ShowingUnreleased = false;
+                Btn_ShowUnreleased.Text = "Show";
                 int NumberOfUnreleasedInvoices = getUnreleasedCount();
                 if (NumberOfUnreleasedInvoices > 0)
                 {
                     Lbl_NoOfUnreleased.Text = "You have " + NumberOfUnreleasedInvoices + " unreleased invoice(s)";
                     Lbl_NoOfUnreleased.ForeColor = Color.Red;
+                    Btn_ShowUnreleased.Enabled = true;
                 }
                 else
                 {
                     Lbl_NoOfUnreleased.Text = "All this month's invoices are released!";
                     Lbl_NoOfUnreleased.ForeColor = Color.Green;
+                    Btn_ShowUnreleased.Enabled = false;
                 }
                 DateTime NextMonth = DateTime.Now;
                 int dayNumber = int.Parse(DateTime.Now.ToString("dd"));
@@ -320,6 +325,46 @@ namespace Electricity_Management_System
                 UpdateCustomers();
 
             }
+        }
+        void DGV_Invoices_Click(object sender, EventArgs e)
+        {
+            if (ShowingUnreleased)
+            {
+                if (DGV_Invoices.SelectedRows.Count > 0)
+                {
+                    Frm_ReleaseInvoice frm = new Frm_ReleaseInvoice(int.Parse(DGV_Invoices.SelectedRows[0].Cells[1].Value.ToString()));
+                    frm.ShowDialog();
+                    frm.Dispose();
+                    ShowUnreleased();
+                    if (DGV_Invoices.Rows.Count == 0)
+                    {
+                        Btn_ShowUnreleased.PerformClick();
+                    }
+                    int NumberOfUnreleasedInvoices = getUnreleasedCount();
+                    if (NumberOfUnreleasedInvoices > 0)
+                    {
+                        Lbl_NoOfUnreleased.Text = "You have " + NumberOfUnreleasedInvoices + " unreleased invoice(s)";
+                        Lbl_NoOfUnreleased.ForeColor = Color.Red;
+                        Btn_ShowUnreleased.Enabled = true;
+                    }
+                    else
+                    {
+                        Lbl_NoOfUnreleased.Text = "All this month's invoices are released!";
+                        Lbl_NoOfUnreleased.ForeColor = Color.Green;
+                        Btn_ShowUnreleased.Enabled = false;
+                    }
+
+                }
+            }
+            else
+            {
+                if (DGV_Invoices.SelectedRows.Count > 0)
+                {
+                    Frm_Report_Invoice Frm = new Frm_Report_Invoice(int.Parse(DGV_Invoices.SelectedRows[0].Cells[2].Value.ToString()));
+                    Frm.ShowDialog();
+                }
+            }
+            
         }
 
         void Txt_FindCustomerByName_TextChanged(object sender, EventArgs e)

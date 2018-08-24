@@ -109,6 +109,52 @@ namespace Electricity_Management_System
             }
         }
 
+        public static String getArabicMonth(int MonthNumber)
+        {
+            String ArabicMonth = "";
+            switch (MonthNumber)
+            {
+                case 1:
+                    ArabicMonth = "كانون ثاني";
+                    break;
+                case 2:
+                    ArabicMonth = "شباط";
+                    break;
+                case 3:
+                    ArabicMonth = "اذار";
+                    break;
+                case 4:
+                    ArabicMonth = "نيسان";
+                    break;
+                case 5:
+                    ArabicMonth = "ايار";
+                    break;
+                case 6:
+                    ArabicMonth = "حزيران";
+                    break;
+                case 7:
+                    ArabicMonth = "تموز";
+                    break;
+                case 8:
+                    ArabicMonth = "اب";
+                    break;
+                case 9:
+                    ArabicMonth = "ايلول";
+                    break;
+                case 10:
+                    ArabicMonth = "تشرين اول";
+                    break;
+                case 11:
+                    ArabicMonth = "تشرين ثاني";
+                    break;
+                case 12:
+                    ArabicMonth = "كانون اول";
+                    break;
+
+            }
+            return ArabicMonth;
+        }
+
         public static void FillCBox(ComboBox theCBox, String theQuery, String valueMember, String displayMember)
         {
             DataTable cBoxDataTable = new DataTable();

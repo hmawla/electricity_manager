@@ -145,7 +145,7 @@
             this.Btn_Edit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Btn_Edit.Depth = 0;
             this.Btn_Edit.Icon = null;
-            this.Btn_Edit.Location = new System.Drawing.Point(476, 334);
+            this.Btn_Edit.Location = new System.Drawing.Point(532, 334);
             this.Btn_Edit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Edit.Name = "Btn_Edit";
             this.Btn_Edit.Primary = true;
@@ -161,7 +161,7 @@
             this.Btn_Exit.BackColor = System.Drawing.Color.White;
             this.Btn_Exit.Depth = 0;
             this.Btn_Exit.Icon = null;
-            this.Btn_Exit.Location = new System.Drawing.Point(533, 334);
+            this.Btn_Exit.Location = new System.Drawing.Point(589, 334);
             this.Btn_Exit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Exit.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Exit.Name = "Btn_Exit";
@@ -176,7 +176,7 @@
             this.Lbl_CounterType.AutoSize = true;
             this.Lbl_CounterType.BackColor = System.Drawing.Color.Transparent;
             this.Lbl_CounterType.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_CounterType.Location = new System.Drawing.Point(415, 95);
+            this.Lbl_CounterType.Location = new System.Drawing.Point(464, 95);
             this.Lbl_CounterType.MaximumSize = new System.Drawing.Size(350, 29);
             this.Lbl_CounterType.Name = "Lbl_CounterType";
             this.Lbl_CounterType.Size = new System.Drawing.Size(181, 29);
@@ -188,7 +188,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label2.Location = new System.Drawing.Point(415, 75);
+            this.label2.Location = new System.Drawing.Point(464, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 32;
@@ -221,7 +221,7 @@
             this.Lbl_MonthlyCost.AutoSize = true;
             this.Lbl_MonthlyCost.BackColor = System.Drawing.Color.Transparent;
             this.Lbl_MonthlyCost.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_MonthlyCost.Location = new System.Drawing.Point(261, 97);
+            this.Lbl_MonthlyCost.Location = new System.Drawing.Point(302, 95);
             this.Lbl_MonthlyCost.Name = "Lbl_MonthlyCost";
             this.Lbl_MonthlyCost.Size = new System.Drawing.Size(180, 29);
             this.Lbl_MonthlyCost.TabIndex = 29;
@@ -232,7 +232,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Roboto", 12F);
-            this.label7.Location = new System.Drawing.Point(261, 75);
+            this.label7.Location = new System.Drawing.Point(302, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 28;
@@ -268,7 +268,7 @@
             this.Btn_Print.BackColor = System.Drawing.Color.White;
             this.Btn_Print.Depth = 0;
             this.Btn_Print.Icon = null;
-            this.Btn_Print.Location = new System.Drawing.Point(409, 334);
+            this.Btn_Print.Location = new System.Drawing.Point(465, 334);
             this.Btn_Print.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Btn_Print.MouseState = MaterialSkin.MouseState.HOVER;
             this.Btn_Print.Name = "Btn_Print";
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 385);
+            this.ClientSize = new System.Drawing.Size(667, 385);
             this.ControlBox = false;
             this.Controls.Add(this.Btn_Print);
             this.Controls.Add(this.Lbl_CounterType);

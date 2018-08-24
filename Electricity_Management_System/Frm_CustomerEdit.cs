@@ -152,7 +152,7 @@ namespace Electricity_Management_System
                         BOX_ID = (int)Cbox_Box.SelectedValue;
                         BUILDING_ID = AddBuilding(CBox_Region, CBox_Street, CBox_Building);
 
-                        ExecuteQuery("UPDATE customer SET customer_name = '" + CUSTOMER_NAME + "', customer_phone = '" + CUSTOMER_PHONE + "', floor = " + FLOOR + ", total_usage = " + TOTAL_USAGE + ", monthly_cost = " + COUNTER_TYPE + ", building_id = " + BUILDING_ID + ", box_id = " + BOX_ID + " WHERE customer_id = " + CUSTOMER_ID);
+                        ExecuteQuery("UPDATE customer SET customer_name = '" + CUSTOMER_NAME + "', customer_phone = '" + CUSTOMER_PHONE + "', floor = " + FLOOR + ", total_usage = " + TOTAL_USAGE + ", monthly_cost = " + MONTHLY_COST + ", ampere_value = " + COUNTER_TYPE + ", building_id = " + BUILDING_ID + ", box_id = " + BOX_ID + " WHERE customer_id = " + CUSTOMER_ID);
                         this.Dispose();
                     }
                 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,12 @@ namespace Electricity_Management_System
         public Frm_ReleaseInvoice(int customer_id)
         {
             InitializeComponent();
+            //Theme Manager
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
+
             this.CUSTOMER_ID = customer_id;
             DataTable dt = new DataTable();
             dt = ReadQueryOut("SELECT customer_name, total_usage, monthly_cost FROM customer WHERE customer_id = " + CUSTOMER_ID);
@@ -35,10 +42,11 @@ namespace Electricity_Management_System
             VALUE_PER_KWATT = int.Parse(dt.Rows[0].ItemArray[1].ToString());
             PRICE_ID = int.Parse(dt.Rows[0].ItemArray[0].ToString());
 
-            Lbl_CustomerID.Text = CUSTOMER_ID.ToString();
-            Lbl_CustomerName.Text = CUSTOMER_NAME;
-            Lbl_LastUsage.Text = TOTAL_USAGE.ToString();
+            Lbl_CustomerID.Text = "Customer ID: " + CUSTOMER_ID.ToString();
+            Lbl_CustomerName.Text = "Customer Name: " + CUSTOMER_NAME;
+            Lbl_LastUsage.Text = "Last Usage: " + TOTAL_USAGE.ToString();
 
+            Txt_CurrentUsage.Minimum = TOTAL_USAGE;
             Txt_Total.Text = MONTHLY_COST.ToString();
 
             Txt_CurrentUsage.TextChanged += new EventHandler(Txt_CurrentUsage_TextChanged);
@@ -66,7 +74,7 @@ namespace Electricity_Management_System
                 if (dialogResult == DialogResult.Yes)
                 {
                     int INVOICE_ID = GenID("invoice", "invoice_id");
-                    ExecuteQuery("INSERT INTO invoice VALUES(" + INVOICE_ID + "date(), " + TOTAL_USAGE + ", " + CurrUsage + ", " + MONTHLY_COST + ", " + (CurrUsage - TOTAL_USAGE) + ", " + PRICE_ID + ", " + CUSTOMER_ID + ")");
+                    ExecuteQuery("INSERT INTO invoice VALUES(" + INVOICE_ID + ", date(), " + TOTAL_USAGE + ", " + CurrUsage + ", " + MONTHLY_COST + ", " + (CurrUsage - TOTAL_USAGE) + ", " + PRICE_ID + ", " + CUSTOMER_ID + ")");
                     MessageBox.Show("Invoice #" + INVOICE_ID + " release.");
                     Dispose();
                 }
@@ -85,8 +93,10 @@ namespace Electricity_Management_System
                 if (dialogResult == DialogResult.Yes)
                 {
                     int INVOICE_ID = GenID("invoice", "invoice_id");
-                    ExecuteQuery("INSERT INTO invoice VALUES(" + INVOICE_ID + "date(), " + TOTAL_USAGE + ", " + CurrUsage + ", " + MONTHLY_COST + ", " + (CurrUsage - TOTAL_USAGE) + ", " + PRICE_ID + ", " + CUSTOMER_ID + ")");
+                    ExecuteQuery("INSERT INTO invoice VALUES(" + INVOICE_ID + ", date(), " + TOTAL_USAGE + ", " + CurrUsage + ", " + MONTHLY_COST + ", " + (CurrUsage - TOTAL_USAGE) + ", " + PRICE_ID + ", " + CUSTOMER_ID + ")");
                     MessageBox.Show("Invoice #" + INVOICE_ID + " release.");
+                    Frm_Report_Invoice frm = new Frm_Report_Invoice(INVOICE_ID);
+                    frm.ShowDialog();
                     Dispose();
                 }
             }
