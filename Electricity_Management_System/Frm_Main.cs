@@ -56,6 +56,9 @@ namespace Electricity_Management_System
             Btn_Help.Click += new EventHandler(Btn_Help_Click);
             Btn_About.Click += new EventHandler(Btn_About_Click);
 
+            //Price Updater
+            Btn_UpdatePrice.Click += new EventHandler(Btn_UpdatePrice_Click);
+
             //Invoices Events
             Btn_ShowUnreleased.Click += new EventHandler(Btn_ShowUnreleased_Click);
 
@@ -189,14 +192,6 @@ namespace Electricity_Management_System
                 
 
             }
-            else if (Tab_Navigator.SelectedIndex == 4)
-            {
-                DataTable dt = ReadQueryOut("SELECT customer_id, customer_name " +
-                    "FROM customer WHERE customer_id = (SELECT MAX(customer_id) FROM customer)");
-                rpt.Database.Tables[0].SetDataSource(dt);
-                crystalReportViewer1.ReportSource = rpt;
-                crystalReportViewer1.RefreshReport();
-            }
         }
 
         int getUnreleasedCount()
@@ -219,6 +214,15 @@ namespace Electricity_Management_System
         void UpdateInvoices(DateTime theDate)
         {
             FillDGV(DGV_Invoices, "SELECT invoice_id AS [Invoice#], box_id AS [Box#], c.customer_id AS [ID], customer_name AS [Name], current_usage AS [Usage in KWATT] FROM customer c, invoice i WHERE c.customer_id = i.customer_id");
+        }
+
+        void Btn_UpdatePrice_Click(object sender, EventArgs e)
+        {
+            if (Txt_PricePerWatt.Text.Length > 0)
+            {
+                ExecuteQuery("INSERT INTO price VALUES(" + GenID("price", "price_id") + ", " + Txt_PricePerWatt.Text + ", date())");
+                MessageBox.Show("Price Updated!");
+            }
         }
 
         void Btn_ShowUnreleased_Click(object sender, EventArgs e)
@@ -332,7 +336,7 @@ namespace Electricity_Management_System
             {
                 if (DGV_Invoices.SelectedRows.Count > 0)
                 {
-                    Frm_ReleaseInvoice frm = new Frm_ReleaseInvoice(int.Parse(DGV_Invoices.SelectedRows[0].Cells[1].Value.ToString()));
+                    Frm_ReleaseInvoice frm = new Frm_ReleaseInvoice(int.Parse(DGV_Invoices.SelectedRows[0].Cells[1].Value.ToString()), int.Parse(Txt_CutHours.Text));
                     frm.ShowDialog();
                     frm.Dispose();
                     ShowUnreleased();
@@ -360,7 +364,7 @@ namespace Electricity_Management_System
             {
                 if (DGV_Invoices.SelectedRows.Count > 0)
                 {
-                    Frm_Report_Invoice Frm = new Frm_Report_Invoice(int.Parse(DGV_Invoices.SelectedRows[0].Cells[2].Value.ToString()));
+                    Frm_Report_Invoice Frm = new Frm_Report_Invoice(int.Parse(DGV_Invoices.SelectedRows[0].Cells[2].Value.ToString()), int.Parse(Txt_CutHours.Text));
                     Frm.ShowDialog();
                 }
             }

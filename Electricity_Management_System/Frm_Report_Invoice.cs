@@ -13,6 +13,14 @@ namespace Electricity_Management_System
 {
     public partial class Frm_Report_Invoice : MaterialSkin.Controls.MaterialForm
     {
+        //Static Data (You may want to change these)
+        //***************************************
+        private String COMPANY_NAME = "Company's Name";
+        private String PHONE1 = "Phone1";
+        private String PHONE2 = "Phone2";
+        private String PHONE3 = "Phone3";
+        //***************************************
+
         private int INVOICE_ID;
         private DateTime INVOICE_DATE;
         private int PREVIOUS_USAGE;
@@ -22,6 +30,7 @@ namespace Electricity_Management_System
         private int CUSTOMER_ID;
         private int BOX_ID;
         private String BOX_NAME;
+        private int CUT_HOURS;
 
         private int VALUE_PER_KWATT;
         private String CUSTOMER_NAME;
@@ -35,10 +44,11 @@ namespace Electricity_Management_System
 
 
 
-        public Frm_Report_Invoice(int INVOICE_ID)
+        public Frm_Report_Invoice(int INVOICE_ID, int CUT_HOURS)
         {
             InitializeComponent();
             this.INVOICE_ID = INVOICE_ID;
+            this.CUT_HOURS = CUT_HOURS;
             getData(INVOICE_ID);
             UpdateReport();
         }
@@ -86,6 +96,12 @@ namespace Electricity_Management_System
             ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["TotalPrice"]).Text = (TOTAL_USAGE * VALUE_PER_KWATT).ToString();
             ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["MonthlyCost"]).Text = MONTHYL_COST.ToString();
             ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["NetTotal"]).Text = (MONTHYL_COST + (TOTAL_USAGE * VALUE_PER_KWATT)).ToString();
+
+            ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["StaticCutHours"]).Text = CUT_HOURS.ToString();
+            ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["StaticCompanyName"]).Text = COMPANY_NAME;
+            ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["StaticPhone1"]).Text = PHONE1;
+            ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["StaticPhone2"]).Text = PHONE2;
+            ((CrystalDecisions.CrystalReports.Engine.TextObject)theReportDocument.Section3.ReportObjects["StaticPhone3"]).Text = PHONE3;
 
             CRptV_Invoice.ReportSource = theReportDocument;
             CRptV_Invoice.RefreshReport();

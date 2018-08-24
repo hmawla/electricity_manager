@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.Btn_Help = new MaterialSkin.Controls.MaterialRaisedButton();
             this.Btn_About = new MaterialSkin.Controls.MaterialFlatButton();
-            this.Tab_General = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.Tab_Invoices = new System.Windows.Forms.TabPage();
             this.Btn_ShowUnreleased = new MaterialSkin.Controls.MaterialFlatButton();
             this.Lbl_NoOfUnreleased = new System.Windows.Forms.Label();
@@ -86,7 +84,11 @@
             this.Tab_Navigator = new MaterialSkin.Controls.MaterialTabControl();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.theNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.Tab_General.SuspendLayout();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.Txt_CutHours = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.Txt_PricePerWatt = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Btn_UpdatePrice = new MaterialSkin.Controls.MaterialFlatButton();
             this.Tab_Invoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Invoices)).BeginInit();
             this.Tab_Boxes.SuspendLayout();
@@ -143,30 +145,14 @@
             this.Btn_About.Text = "About";
             this.Btn_About.UseVisualStyleBackColor = true;
             // 
-            // Tab_General
-            // 
-            this.Tab_General.Controls.Add(this.crystalReportViewer1);
-            this.Tab_General.Location = new System.Drawing.Point(4, 22);
-            this.Tab_General.Name = "Tab_General";
-            this.Tab_General.Size = new System.Drawing.Size(832, 416);
-            this.Tab_General.TabIndex = 5;
-            this.Tab_General.Text = "GENERAL";
-            this.Tab_General.UseVisualStyleBackColor = true;
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(832, 416);
-            this.crystalReportViewer1.TabIndex = 0;
-            // 
             // Tab_Invoices
             // 
             this.Tab_Invoices.BackColor = System.Drawing.Color.White;
+            this.Tab_Invoices.Controls.Add(this.Btn_UpdatePrice);
+            this.Tab_Invoices.Controls.Add(this.materialLabel9);
+            this.Tab_Invoices.Controls.Add(this.Txt_PricePerWatt);
+            this.Tab_Invoices.Controls.Add(this.materialLabel2);
+            this.Tab_Invoices.Controls.Add(this.Txt_CutHours);
             this.Tab_Invoices.Controls.Add(this.Btn_ShowUnreleased);
             this.Tab_Invoices.Controls.Add(this.Lbl_NoOfUnreleased);
             this.Tab_Invoices.Controls.Add(this.DGV_Invoices);
@@ -226,28 +212,28 @@
             this.DGV_Invoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DGV_Invoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Invoices.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Invoices.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Invoices.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Invoices.GridColor = System.Drawing.Color.Black;
             this.DGV_Invoices.Location = new System.Drawing.Point(3, 175);
             this.DGV_Invoices.MultiSelect = false;
             this.DGV_Invoices.Name = "DGV_Invoices";
             this.DGV_Invoices.ReadOnly = true;
             this.DGV_Invoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Invoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Invoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Invoices.RowHeadersVisible = false;
             this.DGV_Invoices.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Invoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -524,28 +510,28 @@
             this.DGV_Boxes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DGV_Boxes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Boxes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Boxes.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Boxes.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Boxes.GridColor = System.Drawing.Color.Black;
             this.DGV_Boxes.Location = new System.Drawing.Point(3, 125);
             this.DGV_Boxes.MultiSelect = false;
             this.DGV_Boxes.Name = "DGV_Boxes";
             this.DGV_Boxes.ReadOnly = true;
             this.DGV_Boxes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Boxes.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Boxes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_Boxes.RowHeadersVisible = false;
             this.DGV_Boxes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Boxes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -675,28 +661,28 @@
             this.DGV_Customers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DGV_Customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Customers.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV_Customers.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_Customers.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Customers.GridColor = System.Drawing.Color.Black;
             this.DGV_Customers.Location = new System.Drawing.Point(3, 127);
             this.DGV_Customers.MultiSelect = false;
             this.DGV_Customers.Name = "DGV_Customers";
             this.DGV_Customers.ReadOnly = true;
             this.DGV_Customers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Customers.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Customers.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Customers.RowHeadersVisible = false;
             this.DGV_Customers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGV_Customers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -838,7 +824,6 @@
             this.Tab_Navigator.Controls.Add(this.Tab_Customers);
             this.Tab_Navigator.Controls.Add(this.Tab_Boxes);
             this.Tab_Navigator.Controls.Add(this.Tab_Invoices);
-            this.Tab_Navigator.Controls.Add(this.Tab_General);
             this.Tab_Navigator.Depth = 0;
             this.Tab_Navigator.Location = new System.Drawing.Point(12, 101);
             this.Tab_Navigator.MouseState = MaterialSkin.MouseState.HOVER;
@@ -864,6 +849,88 @@
             // 
             this.theNotifyIcon.Visible = true;
             // 
+            // materialLabel2
+            // 
+            this.materialLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(681, 12);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(81, 19);
+            this.materialLabel2.TabIndex = 29;
+            this.materialLabel2.Text = "Cut Hours:";
+            // 
+            // Txt_CutHours
+            // 
+            this.Txt_CutHours.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_CutHours.Depth = 0;
+            this.Txt_CutHours.Hint = "0000";
+            this.Txt_CutHours.Location = new System.Drawing.Point(768, 8);
+            this.Txt_CutHours.MaxLength = 32767;
+            this.Txt_CutHours.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Txt_CutHours.Name = "Txt_CutHours";
+            this.Txt_CutHours.PasswordChar = '\0';
+            this.Txt_CutHours.SelectedText = "";
+            this.Txt_CutHours.SelectionLength = 0;
+            this.Txt_CutHours.SelectionStart = 0;
+            this.Txt_CutHours.Size = new System.Drawing.Size(61, 23);
+            this.Txt_CutHours.TabIndex = 28;
+            this.Txt_CutHours.TabStop = false;
+            this.Txt_CutHours.Text = "0";
+            this.Txt_CutHours.UseSystemPasswordChar = false;
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.Location = new System.Drawing.Point(367, 12);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(108, 19);
+            this.materialLabel9.TabIndex = 31;
+            this.materialLabel9.Text = "Price Per Watt:";
+            // 
+            // Txt_PricePerWatt
+            // 
+            this.Txt_PricePerWatt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_PricePerWatt.Depth = 0;
+            this.Txt_PricePerWatt.Hint = "0000";
+            this.Txt_PricePerWatt.Location = new System.Drawing.Point(481, 8);
+            this.Txt_PricePerWatt.MaxLength = 32767;
+            this.Txt_PricePerWatt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Txt_PricePerWatt.Name = "Txt_PricePerWatt";
+            this.Txt_PricePerWatt.PasswordChar = '\0';
+            this.Txt_PricePerWatt.SelectedText = "";
+            this.Txt_PricePerWatt.SelectionLength = 0;
+            this.Txt_PricePerWatt.SelectionStart = 0;
+            this.Txt_PricePerWatt.Size = new System.Drawing.Size(61, 23);
+            this.Txt_PricePerWatt.TabIndex = 30;
+            this.Txt_PricePerWatt.TabStop = false;
+            this.Txt_PricePerWatt.UseSystemPasswordChar = false;
+            // 
+            // Btn_UpdatePrice
+            // 
+            this.Btn_UpdatePrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_UpdatePrice.AutoSize = true;
+            this.Btn_UpdatePrice.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btn_UpdatePrice.Depth = 0;
+            this.Btn_UpdatePrice.Icon = null;
+            this.Btn_UpdatePrice.Location = new System.Drawing.Point(549, 4);
+            this.Btn_UpdatePrice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btn_UpdatePrice.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btn_UpdatePrice.Name = "Btn_UpdatePrice";
+            this.Btn_UpdatePrice.Primary = true;
+            this.Btn_UpdatePrice.Size = new System.Drawing.Size(73, 36);
+            this.Btn_UpdatePrice.TabIndex = 6;
+            this.Btn_UpdatePrice.Text = "Update";
+            this.Btn_UpdatePrice.UseVisualStyleBackColor = true;
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -880,7 +947,6 @@
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
-            this.Tab_General.ResumeLayout(false);
             this.Tab_Invoices.ResumeLayout(false);
             this.Tab_Invoices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Invoices)).EndInit();
@@ -945,10 +1011,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.Label Lbl_NextInvoiceDays;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TabPage Tab_General;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.NotifyIcon theNotifyIcon;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Txt_CutHours;
+        private MaterialSkin.Controls.MaterialFlatButton Btn_UpdatePrice;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialSingleLineTextField Txt_PricePerWatt;
     }
 }
 

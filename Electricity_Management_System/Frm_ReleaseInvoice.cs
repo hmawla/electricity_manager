@@ -20,9 +20,10 @@ namespace Electricity_Management_System
         private int MONTHLY_COST;
         private int VALUE_PER_KWATT;
         private int PRICE_ID;
+        private int CUT_HOURS;
 
 
-        public Frm_ReleaseInvoice(int customer_id)
+        public Frm_ReleaseInvoice(int customer_id, int CUT_HOURS)
         {
             InitializeComponent();
             //Theme Manager
@@ -31,6 +32,7 @@ namespace Electricity_Management_System
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
 
+            this.CUT_HOURS = CUT_HOURS;
             this.CUSTOMER_ID = customer_id;
             DataTable dt = new DataTable();
             dt = ReadQueryOut("SELECT customer_name, total_usage, monthly_cost FROM customer WHERE customer_id = " + CUSTOMER_ID);
@@ -95,7 +97,7 @@ namespace Electricity_Management_System
                     int INVOICE_ID = GenID("invoice", "invoice_id");
                     ExecuteQuery("INSERT INTO invoice VALUES(" + INVOICE_ID + ", date(), " + TOTAL_USAGE + ", " + CurrUsage + ", " + MONTHLY_COST + ", " + (CurrUsage - TOTAL_USAGE) + ", " + PRICE_ID + ", " + CUSTOMER_ID + ")");
                     MessageBox.Show("Invoice #" + INVOICE_ID + " release.");
-                    Frm_Report_Invoice frm = new Frm_Report_Invoice(INVOICE_ID);
+                    Frm_Report_Invoice frm = new Frm_Report_Invoice(INVOICE_ID, CUT_HOURS);
                     frm.ShowDialog();
                     Dispose();
                 }
